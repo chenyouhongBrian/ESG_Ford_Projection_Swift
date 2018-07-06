@@ -2822,7 +2822,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A479K73LB4;
+				DEVELOPMENT_TEAM = 73U8WE32SN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2838,7 +2838,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FMCSecurity/debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ford.SDLProjectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SDLProjectionDemo/SDLProjectionDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2851,7 +2851,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A479K73LB4;
+				DEVELOPMENT_TEAM = 73U8WE32SN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2867,7 +2867,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FMCSecurity/release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ford.SDLProjectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SDLProjectionDemo/SDLProjectionDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
