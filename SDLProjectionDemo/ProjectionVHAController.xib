@@ -12,34 +12,167 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectionVHAController" customModule="SDLProjectionDemo" customModuleProvider="target">
             <connections>
+                <outlet property="alertButton" destination="fVS-WT-hW5" id="Fdm-Y7-MN2"/>
+                <outlet property="engineAlert" destination="UDa-N8-3lI" id="GcJ-OK-0Jj"/>
+                <outlet property="engineImage" destination="bzX-eB-RoA" id="Fkg-y0-MOw"/>
+                <outlet property="exhaustAlert" destination="78f-7d-dM5" id="geh-QL-cST"/>
+                <outlet property="fuelAlert" destination="Dnt-5C-AWN" id="Re1-qO-hmS"/>
+                <outlet property="fuelImage" destination="V4T-mr-A9u" id="ywy-xi-esD"/>
+                <outlet property="steerAlert" destination="xjl-mG-zMd" id="DGD-em-1Zt"/>
+                <outlet property="tireAlert" destination="ZmC-4g-ocv" id="ZnU-Ve-J4i"/>
+                <outlet property="tireImage1" destination="ph5-Hq-wZA" id="mCC-xZ-WD2"/>
+                <outlet property="tireImage2" destination="Hfj-bJ-AbS" id="lud-Tm-OMj"/>
+                <outlet property="tireImage3" destination="Kru-di-SIg" id="zkw-2h-Z1j"/>
+                <outlet property="tireImage4" destination="hHx-FC-82M" id="cpj-s8-bjR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="790" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
-                    <rect key="frame" x="51" y="37" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
+                    <rect key="frame" x="-7" y="72" width="82" height="82"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="caq"/>
+                    <state key="normal" image="home_caq_bg"/>
                     <connections>
                         <action selector="caqButtonAction:" destination="-1" eventType="touchUpInside" id="bzj-CJ-uCl"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
-                    <rect key="frame" x="51" y="97" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
+                    <rect key="frame" x="-7" y="184" width="82" height="82"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="web"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="web" image="home_application_bg"/>
                     <connections>
                         <action selector="webButtionAction:" destination="-1" eventType="touchUpInside" id="YqI-Yl-k0h"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_application_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-s7-JE5">
+                    <rect key="frame" x="11" y="193" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_caq_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xPI-x4-PdE">
+                    <rect key="frame" x="10" y="82" width="49" height="46"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_car" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-8b-Rec">
+                    <rect key="frame" x="90" y="33" width="612" height="252"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_engine" translatesAutoresizingMaskIntoConstraints="NO" id="bzX-eB-RoA">
+                    <rect key="frame" x="122" y="87" width="123" height="127"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-mG-zMd">
+                    <rect key="frame" x="264" y="108" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="VHA_warning"/>
+                    <connections>
+                        <action selector="steerAlertAction:" destination="-1" eventType="touchUpInside" id="wNu-nr-twH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78f-7d-dM5">
+                    <rect key="frame" x="647" y="148" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="VHA_warning"/>
+                    <connections>
+                        <action selector="exhaustAlertAction:" destination="-1" eventType="touchUpInside" id="r8g-2i-GWc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-4g-ocv">
+                    <rect key="frame" x="567" y="20" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="VHA_warning"/>
+                    <connections>
+                        <action selector="tireAlertAction:" destination="-1" eventType="touchUpInside" id="O9R-WK-ZxV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-5C-AWN">
+                    <rect key="frame" x="136" y="196" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="VHA_warning"/>
+                    <connections>
+                        <action selector="fuelAlertAction:" destination="-1" eventType="touchUpInside" id="I5e-lp-SNu"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Hfj-bJ-AbS">
+                    <rect key="frame" x="468" y="20" width="145" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-FC-82M">
+                    <rect key="frame" x="133" y="233" width="145" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-di-SIg">
+                    <rect key="frame" x="489" y="233" width="145" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-WT-hW5">
+                    <rect key="frame" x="13" y="275" width="93" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Alert" backgroundImage="VHA_Alert_buttom">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="alertButtonAction:" destination="-1" eventType="touchUpInside" id="aK1-im-vog"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYo-0e-88E">
+                    <rect key="frame" x="698" y="20" width="84" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Random" backgroundImage="VHA_call_buttom">
+                        <color key="titleColor" red="0.2666666667" green="0.78823529410000004" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="randomAction:" destination="-1" eventType="touchUpInside" id="1VX-yU-t6e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-md-peq">
+                    <rect key="frame" x="698" y="275" width="84" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="call dealer" backgroundImage="VHA_call_buttom">
+                        <color key="titleColor" red="0.26666666666666666" green="0.78823529411764703" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="callDealerAction:" destination="-1" eventType="touchUpInside" id="HcE-6F-Pyd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDa-N8-3lI">
+                    <rect key="frame" x="163" y="108" width="55" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="VHA_warning"/>
+                    <connections>
+                        <action selector="engineAlertAction:" destination="-1" eventType="touchUpInside" id="VV0-ZJ-DEa"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_light" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-mr-A9u">
+                    <rect key="frame" x="78" y="196" width="113" height="89"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-Hq-wZA">
+                    <rect key="frame" x="136" y="20" width="145" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="56" y="-424"/>
         </view>
     </objects>
+    <resources>
+        <image name="VHA_Alert_buttom" width="55" height="23"/>
+        <image name="VHA_call_buttom" width="55" height="23"/>
+        <image name="VHA_vertical_car" width="278" height="122"/>
+        <image name="VHA_vertical_engine" width="52" height="54"/>
+        <image name="VHA_vertical_light" width="52" height="45"/>
+        <image name="VHA_vertical_tire" width="61" height="37"/>
+        <image name="VHA_warning" width="27" height="27"/>
+        <image name="home_application_bg" width="88" height="88"/>
+        <image name="home_application_icon" width="56" height="56"/>
+        <image name="home_caq_bg" width="88" height="88"/>
+        <image name="home_caq_icon" width="56" height="56"/>
+    </resources>
 </document>

@@ -23,13 +23,22 @@ class ProjectionWebController: UIViewController {
     
 
     @IBAction func caqButtonAction(_ sender: Any) {
-        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        let window = UIApplication.shared.keyWindow
+        let windowView = window?.rootViewController?.view
+        let vhaView = windowView?.viewWithTag(2000)
+        let webView = windowView?.viewWithTag(3000)
+        vhaView?.isHidden = true
+        webView?.isHidden = true
     }
     
     
     @IBAction func vhaButtonAction(_ sender: Any) {
-        
-        
+        let window = UIApplication.shared.keyWindow
+        let windowView = window?.rootViewController?.view
+        let vhaView = windowView?.viewWithTag(2000)
+        let webView = windowView?.viewWithTag(3000)
+        vhaView?.isHidden = false
+        webView?.isHidden = true
     }
     
 

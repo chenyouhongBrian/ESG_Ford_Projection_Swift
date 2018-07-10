@@ -29,9 +29,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         let frame = UIScreen.main.bounds;
         let window = UIWindow.init(frame: frame)
        
-        let vc = ProjectionCAQController.init(nibName: nil, bundle: nil)
-        self.rootViewController = UINavigationController.init(rootViewController: vc)
-        window.rootViewController = self.rootViewController
+        let caqVc = ProjectionCAQController.init(nibName: nil, bundle: nil)
+        let vhaVc = ProjectionVHAController.init(nibName: nil, bundle: nil)
+        let webVc = ProjectionWebController.init(nibName: nil, bundle: nil)
+        
+        caqVc.view.tag = 1000
+        vhaVc.view.tag = 2000
+        webVc.view.tag = 3000
+        
+        window.rootViewController = caqVc
+        window.rootViewController?.addChildViewController(vhaVc)
+        window.rootViewController?.addChildViewController(webVc)
+        window.rootViewController?.view.addSubview(vhaVc.view)
+        window.rootViewController?.view.addSubview(webVc.view)
+        
+        vhaVc.view.isHidden = true
+        webVc.view.isHidden = true
+        
+        window.rootViewController?.view.bringSubview(toFront: caqVc.view)
+        
         window.makeKeyAndVisible()
         self.window = window
         

@@ -9,30 +9,28 @@
 import UIKit
 
 class ProjectionCAQController: UIViewController {
-
-    
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     @IBAction func vhaButtonAction(_ sender: Any) {
-        let vc = ProjectionVHAController.init(nibName: nil, bundle: nil)
-        self.present(vc, animated: false, completion: nil)
-        
-        
+        let window = UIApplication.shared.keyWindow
+        let windowView = window?.rootViewController?.view
+        let vhaView = windowView?.viewWithTag(2000)
+        let webView = windowView?.viewWithTag(3000)
+        vhaView?.isHidden = false
+        webView?.isHidden = true
     }
     
     @IBAction func appButtonAction(_ sender: Any) {
-        
-        
-        let vc = ProjectionWebController.init(nibName: nil, bundle: nil)
-        self.present(vc, animated: false, completion: nil)
-        
-        
+        let window = UIApplication.shared.keyWindow
+        let windowView = window?.rootViewController?.view
+        let vhaView = windowView?.viewWithTag(2000)
+        let webView = windowView?.viewWithTag(3000)
+        vhaView?.isHidden = true
+        webView?.isHidden = false
     }
     
 
