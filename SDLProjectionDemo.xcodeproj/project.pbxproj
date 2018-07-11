@@ -12,6 +12,8 @@
 		894C8C4420BFCF2900EEF04F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894C8C4320BFCF2900EEF04F /* AVFoundation.framework */; };
 		894C8C4D20BFCF4C00EEF04F /* libFMCSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894C8C4720BFCF4C00EEF04F /* libFMCSecurity.a */; };
 		894C8C4E20BFCF4C00EEF04F /* libFMCSecurity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894C8C4C20BFCF4C00EEF04F /* libFMCSecurity.a */; };
+		896ED6A620F5C7C000CC3CC2 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896ED6A520F5C7C000CC3CC2 /* Tool.swift */; };
+		896ED6A820F5C9A000CC3CC2 /* WarningContent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 896ED6A720F5C99F00CC3CC2 /* WarningContent.plist */; };
 		89C751E020B6A2EB0086FACC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89C74F0120B6A2E60086FACC /* LICENSE */; };
 		89C751E120B6A2EB0086FACC /* SDLConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C74F0320B6A2E60086FACC /* SDLConfiguration.m */; };
 		89C751E220B6A2EB0086FACC /* SDLResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C74F0620B6A2E60086FACC /* SDLResult.m */; };
@@ -413,6 +415,8 @@
 		894C8C4920BFCF4C00EEF04F /* FMCSecurityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCSecurityManager.h; sourceTree = "<group>"; };
 		894C8C4A20BFCF4C00EEF04F /* FMCSecurityConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCSecurityConstants.h; sourceTree = "<group>"; };
 		894C8C4C20BFCF4C00EEF04F /* libFMCSecurity.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFMCSecurity.a; sourceTree = "<group>"; };
+		896ED6A520F5C7C000CC3CC2 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		896ED6A720F5C99F00CC3CC2 /* WarningContent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WarningContent.plist; sourceTree = "<group>"; };
 		89C74F0120B6A2E60086FACC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		89C74F0320B6A2E60086FACC /* SDLConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLConfiguration.m; sourceTree = "<group>"; };
 		89C74F0420B6A2E60086FACC /* SDLIgnitionStableStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLIgnitionStableStatus.h; sourceTree = "<group>"; };
@@ -2176,6 +2180,7 @@
 		89E0E1F420B3ECBC0066448E /* SDLProjectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				896ED6A720F5C99F00CC3CC2 /* WarningContent.plist */,
 				89C74EFF20B6A2E60086FACC /* ThridPart */,
 				89E0E1F520B3ECBC0066448E /* AppDelegate.swift */,
 				89E0E1F720B3ECBC0066448E /* ViewController.swift */,
@@ -2186,6 +2191,7 @@
 				89F6F84720DA44FB0036BFE1 /* ProjectionCAQController.swift */,
 				89F6F84820DA44FB0036BFE1 /* ProjectionCAQController.xib */,
 				89DA8C3520EE17E2002A9DEA /* ProjectionVHAController.swift */,
+				896ED6A520F5C7C000CC3CC2 /* Tool.swift */,
 				89DA8C3620EE17E2002A9DEA /* ProjectionVHAController.xib */,
 				89DA8C3920EE18FB002A9DEA /* ProjectionWebController.swift */,
 				89DA8C3A20EE18FB002A9DEA /* ProjectionWebController.xib */,
@@ -2291,6 +2297,7 @@
 				89C751EF20B6A2EB0086FACC /* lock_arrow_up_black.png in Resources */,
 				89C751EA20B6A2EB0086FACC /* lock_arrow_up_white@2x.png in Resources */,
 				89C751EB20B6A2EB0086FACC /* lock_arrow_up_white@3x.png in Resources */,
+				896ED6A820F5C9A000CC3CC2 /* WarningContent.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2601,6 +2608,7 @@
 				89C752E420B6A2EC0086FACC /* SDLResponseDispatcher.m in Sources */,
 				89C752DC20B6A2EC0086FACC /* SDLPermissionItem.m in Sources */,
 				89C752FA20B6A2EC0086FACC /* SDLOasisAddress.m in Sources */,
+				896ED6A620F5C7C000CC3CC2 /* Tool.swift in Sources */,
 				89C7527620B6A2EB0086FACC /* SDLPhoneCapability.m in Sources */,
 				89C752C220B6A2EC0086FACC /* SDLProtocolMessageAssembler.m in Sources */,
 				89C752B820B6A2EC0086FACC /* SDLChangeRegistrationResponse.m in Sources */,
@@ -2822,8 +2830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-
+				DEVELOPMENT_TEAM = 9E9SE5A7N8;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2852,9 +2859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = "";
-
+				DEVELOPMENT_TEAM = 9E9SE5A7N8;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

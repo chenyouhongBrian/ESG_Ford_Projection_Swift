@@ -99,6 +99,7 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
             }
         }
     }
+    
     func readyToStartVideoSession()  {
         if (!self.isHmiReady) {
             return

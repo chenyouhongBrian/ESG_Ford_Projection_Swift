@@ -11,7 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
     var window: UIWindow?
-    var rootViewController: UINavigationController!
+    var rootViewController: UIViewController!
     
     var fordWindowSize = CGSize.zero
     var fordWindowInsets = UIEdgeInsets.zero
@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         vhaVc.view.tag = 2000
         webVc.view.tag = 3000
         
-        window.rootViewController = caqVc
+        self.rootViewController = caqVc
+        window.rootViewController = self.rootViewController
+        
         window.rootViewController?.addChildViewController(vhaVc)
         window.rootViewController?.addChildViewController(webVc)
         window.rootViewController?.view.addSubview(vhaVc.view)
@@ -91,12 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         
         if manager.connected {
             self.stopVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: manager, selector: #selector(manager.stopVideoSession), userInfo: nil, repeats: false)
-            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.onDidconnnectFord), userInfo: nil, repeats: false)
+            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(manager.startVideoSession), userInfo: nil, repeats: false)
         }  
         manager.startConnect()
         if self.becomeActiveShouldResumeWindow {
             self.becomeActiveShouldResumeWindow = false
-            self.resumeWindowTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.onDidconnnectFord), userInfo: nil, repeats: false)
+            self.resumeWindowTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.onDisconnectFord), userInfo: nil, repeats: false)
         }
     }
 

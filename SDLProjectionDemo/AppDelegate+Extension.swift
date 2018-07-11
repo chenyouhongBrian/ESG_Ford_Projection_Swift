@@ -19,7 +19,7 @@ extension AppDelegate{
         self.changeWindowFrame()
     }
     
-    @objc func onDidconnnectFord() {
+    @objc func onDisconnectFord() {
         UIApplication.shared.isIdleTimerDisabled = false
         let manager = ProxyManager.sharedInstance
         manager.stopCapture()
@@ -34,7 +34,7 @@ extension AppDelegate{
             if manager.isBackgroundStated {
                 self.becomeActiveShouldResumeWindow = true
             }else{
-                self.onDidconnnectFord()
+                self.onDisconnectFord()
             }
         }
     }
@@ -56,6 +56,7 @@ extension AppDelegate{
         
         self.rootViewController.view.setNeedsUpdateConstraints()
         self.rootViewController.view.setNeedsLayout()
+        manager.startCapture()
     }
     
     func resumeWindowFrame() {
@@ -64,7 +65,7 @@ extension AppDelegate{
         self.window?.frame = screen.bounds
         self.window?.setNeedsLayout()
         
-        let view = self.rootViewController.topViewController?.view
+        let view = self.rootViewController.view
         view?.setNeedsUpdateConstraints()
         view?.setNeedsLayout()
         
