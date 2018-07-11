@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         
         if manager.connected {
             self.stopVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: manager, selector: #selector(manager.stopVideoSession), userInfo: nil, repeats: false)
-            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.onDidconnnectFord), userInfo: nil, repeats: false)
+            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(manager.startVideoSession), userInfo: nil, repeats: false)
         }  
         manager.startConnect()
         if self.becomeActiveShouldResumeWindow {

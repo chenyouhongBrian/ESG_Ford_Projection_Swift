@@ -133,12 +133,12 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         }
     }
     
-    func sendVideoData(imageBuffer : CVImageBuffer) -> Bool {
+    func sendVideoData(imageBuffer : CVImageBuffer) -> Bool? {
         if (!self.isVideoSessionConnected) {
             return false
         }
         let ret = self.sdlManager.streamManager?.sendVideoData(imageBuffer)
-        return ret!
+        return ret
     }
     func sendAudioData(data : Data) -> Bool {
         if (!self.isAudioSessionConnected) {

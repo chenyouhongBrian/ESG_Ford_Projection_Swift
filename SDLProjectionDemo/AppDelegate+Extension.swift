@@ -56,6 +56,7 @@ extension AppDelegate{
         
         self.rootViewController.view.setNeedsUpdateConstraints()
         self.rootViewController.view.setNeedsLayout()
+        manager.startCapture()
     }
     
     func resumeWindowFrame() {
