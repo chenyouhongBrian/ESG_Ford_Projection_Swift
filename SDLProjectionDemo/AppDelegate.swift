@@ -1,4 +1,4 @@
-//
+    //
 //  AppDelegate.swift
 //  SDLProjectionDemo
 //
@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
     var stopVideoSessionTimer: Timer?
     var startVideoSessionTimer: Timer?
     var resumeWindowTimer: Timer?
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

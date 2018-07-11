@@ -1,14 +1,16 @@
 //
 //  ProxyManager.swift
-//  SDLProjectionDemo
+//  SDLDemo
 //
-//  Created by Yuan on 2018/5/24.
-//  Copyright © 2018 YuanWei. All rights reserved.
+//  Created by zhengzheng on 2018/5/15.
+//  Copyright © 2018 Sogou, Inc. All rights reserved.
 //
 
 import UIKit
 import Foundation
-//import SmartDeviceLink
+import MapKit
+import CoreVideo
+
 
 enum SDLHMIFirstState: Int {
     case none = 0
@@ -23,28 +25,27 @@ enum SDLHMIInitialShowState: Int {
 }
 
 protocol ProxyManagerDelegate: NSObjectProtocol {
-    func sdlManager(_ sdlManager: ProxyManager,didReceived touchEvent:SDLOnTouchEvent)
-    func sdlManager(_ sdlManager: ProxyManager,didSelect command: Int)
-    func sdlManager(_ sdlManager: ProxyManager,didConnected: Bool)
+    func sdlManager(_ sdlManager: ProxyManager, didReceived touchEvent: SDLOnTouchEvent)
+    func sdlManager(_ sdlManager: ProxyManager, didUpdated location: CLLocation)
+    func sdlManager(_ sdlManager: ProxyManager, didSelect command: Int)
+    func sdlManager(_ sdlManager: ProxyManager, didConnected: Bool)
 }
 
-class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
+class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
     static let sharedInstance = ProxyManager()
+    
     weak var delegate: ProxyManagerDelegate?
-    var sdlManager: SDLManager!
-
+    
     var connected: Bool = false {
-       //willSet有一个newValue参数，didSet有一个oldvalue参数
-        willSet(newValue){
+        willSet(newValue) {
             
         }
         didSet(oldValue) {
-            if (connected != oldValue){
+            if (connected != oldValue) {
                 self.delegate?.sdlManager(self, didConnected: connected)
             }
         }
-    } 
-    
+    }
     var isVideoSessionConnected: Bool {
         get {
             return (self.sdlManager.streamManager?.videoSessionConnected)!
@@ -55,7 +56,6 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
             return (self.sdlManager.streamManager?.audioSessionConnected)!
         }
     }
-    
     var screenWidth = Float(800.0)
     var screenHeight = Float(348.0)
     
@@ -65,27 +65,30 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
     var isHmiReady = false
     var firstTimeHMIFull = false
     var isCapturing: Bool = false
-    var captureQueue = DispatchQueue(label: "projection.capture.queue")
+    var captureQueue = DispatchQueue(label: "sogoumap.capture.queue")
     var displayLink: CADisplayLink?
+    var sdlManager: SDLManager!
     
     private override init() {
         super.init()
-        let lifecyceConfig = SDLLifecycleConfiguration.defaultConfiguration(withAppName: "搜狗导航", appId: "3342016694")
+        let lifecycleConfig = SDLLifecycleConfiguration.defaultConfiguration(withAppName: "搜狗导航", appId: "3342016694")
+        lifecycleConfig.securityManagers = [FMCSecurityManager.self]
         
-        lifecyceConfig.appType = SDLAppHMIType.navigation()
-        lifecyceConfig.securityManagers = [FMCSecurityManager.self]
+        lifecycleConfig.appType = SDLAppHMIType.navigation()
         let image = UIImage.init(named: "appicon1")
         let appIconArt = SDLArtwork.persistentArtwork(with: image!, name: "appicon1", as: .PNG)
-        lifecyceConfig.appIcon = appIconArt
-        lifecyceConfig.language = SDLLanguage.zh_CN()
-        lifecyceConfig.languagesSupported = [SDLLanguage.zh_CN(),SDLLanguage.en_US(),SDLLanguage.en_GB()]
+        lifecycleConfig.appIcon = appIconArt
+        lifecycleConfig.language = SDLLanguage.zh_CN()
+        lifecycleConfig.languagesSupported = [SDLLanguage.zh_CN(), SDLLanguage.en_US(), SDLLanguage.en_GB()]
+        
         let lockScreen = SDLLockScreenConfiguration.disabled()
-        let config = SDLConfiguration.init(lifecycle: lifecyceConfig, lockScreen: lockScreen)
+        let config = SDLConfiguration.init(lifecycle: lifecycleConfig, lockScreen: lockScreen)
         self.sdlManager = SDLManager.init(configuration: config, delegate: self)
+        
     }
     
-    //MARK: Public Methods
-    func startConnect()  {
+    // MARK: Public Methods
+    func startConnect() {
         NotificationCenter.default.removeObserver(self, name: SDLDidReceiveRegisterAppInterfaceResponse, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveRegisterAppInterfaceResponse), name: SDLDidReceiveRegisterAppInterfaceResponse, object: nil)
         
@@ -94,13 +97,13 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
                 self.sdlManager.proxy?.removeDelegate(self)
                 self.sdlManager.proxy?.addDelegate(self)
                 self.connected = true
-            }else{
+            }
+            else {
                 self.connected = false
             }
         }
     }
-    
-    func readyToStartVideoSession()  {
+    func readyToStartVideoSession() {
         if (!self.isHmiReady) {
             return
         }
@@ -115,7 +118,7 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
                                     kVTCompressionPropertyKey_RealTime: true,
                                     kVTCompressionPropertyKey_AverageBitRate: (bitrate * 1024),
                                     kVTCompressionPropertyKey_ExpectedFrameRate: (20)] as [CFString : Any]
-       self.sdlManager.streamManager?.videoEncoderSettings = videoEncoderSettings
+        self.sdlManager.streamManager?.videoEncoderSettings = videoEncoderSettings
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.sdlManager.streamManager?.startVideoSession(withTLS: .authenticateOnly, start: { (success, encryption, error) in
@@ -123,7 +126,7 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
                     if let err = error {
                         print("err = \(err)")
                     }
-                    else{
+                    else {
                         print("Error starting video session.")
                     }
                 }
@@ -147,10 +150,8 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         }
         let ret = self.sdlManager.streamManager?.sendAudioData(data)
         return ret!
-        }
-  
-    func startVideoSessionWithCompletion(startBlock : @escaping
-        SDLStreamingEncryptionStartBlock) {
+    }
+    func startVideoSessionWithCompletion(startBlock : @escaping SDLStreamingEncryptionStartBlock) {
         if (self.isVideoSessionConnected) {
             startBlock(true, true, nil)
             return
@@ -161,7 +162,7 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         })
     }
     @objc func startVideoSession() {
-        self.startVideoSessionWithCompletion { (success, encrytion, error) in
+        self.startVideoSessionWithCompletion { (success, encryption, error) in
         }
     }
     @objc func stopVideoSession() {
@@ -178,11 +179,14 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         })
     }
     @objc func stopAudioSession() {
-        
+        if (self.isAudioSessionConnected) {
+            self.sdlManager.streamManager?.stopAudioSession()
+        }
     }
     
+    
     func startCapture() {
-        // captureQueue.syn
+        //        captureQueue.syn
         self.captureQueue.sync {
             if !self.isCapturing {
                 let currentRunLoop = RunLoop.main
@@ -190,7 +194,7 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
                 self.displayLink = CADisplayLink(target: self, selector: #selector(self.render))
                 self.displayLink?.add(to: currentRunLoop, forMode: RunLoopMode.commonModes)
                 self.isCapturing = true
-                self.displayLink?.preferredFramesPerSecond = 4
+                self.displayLink?.frameInterval = 4
             }
         }
     }
@@ -221,10 +225,10 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         }
     }
     
-    func snapshot(view: UIView, scale:CGFloat) -> UIImage? {
+    func snapshot(view: UIView, scale: CGFloat) -> UIImage? {
         let size = CGSize(width: view.frame.size.width * scale, height: view.frame.size.height * scale)
         UIGraphicsBeginImageContextWithOptions(size, false, 1.5)
-        let rect = CGRect(x: 0.0, y:0.0, width: size.width, height: size.height)
+        let rect = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
         view.drawHierarchy(in: rect, afterScreenUpdates: false)
         let snapshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -235,11 +239,18 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
         let imageWidth = Int(image.width)
         let imageHeight = Int(image.height)
         
-        let attributes : [NSObject:AnyObject] = [kCVPixelBufferCGImageCompatibilityKey : true as AnyObject,
-                                                 kCVPixelBufferCGBitmapContextCompatibilityKey : true as AnyObject]
+        let attributes : [NSObject:AnyObject] = [
+            kCVPixelBufferCGImageCompatibilityKey : true as AnyObject,
+            kCVPixelBufferCGBitmapContextCompatibilityKey : true as AnyObject
+        ]
         
         var pxbuffer: CVPixelBuffer? = nil
-        CVPixelBufferCreate(kCFAllocatorDefault, imageWidth, imageHeight, kCVPixelFormatType_32ARGB, attributes as CFDictionary?, &pxbuffer)
+        CVPixelBufferCreate(kCFAllocatorDefault,
+                            imageWidth,
+                            imageHeight,
+                            kCVPixelFormatType_32ARGB,
+                            attributes as CFDictionary?,
+                            &pxbuffer)
         
         if let _pxbuffer = pxbuffer {
             let flags = CVPixelBufferLockFlags(rawValue: 0)
@@ -254,89 +265,113 @@ class ProxyManager: NSObject, SDLManagerDelegate, SDLProxyListener {
                                     bytesPerRow: CVPixelBufferGetBytesPerRow(_pxbuffer),
                                     space: rgbColorSpace,
                                     bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)
+            
             if let _context = context {
                 _context.draw(image, in: CGRect.init(x: 0, y: 0, width: imageWidth, height: imageHeight))
-            }else{
-                CVPixelBufferUnlockBaseAddress(_pxbuffer, flags)
-                 return nil
             }
+            else {
+                
+                CVPixelBufferUnlockBaseAddress(_pxbuffer, flags)
+                return nil
+            }
+            
             CVPixelBufferUnlockBaseAddress(_pxbuffer, flags)
             return _pxbuffer
         }
+        
         return nil
     }
     
-    //MARK: PRC Request Methods
+    // MARK: RPC Request Methods
     func sendRequestOnce(rpcRequest: SDLRPCRequest) {
         self.sdlManager.send(rpcRequest, withResponseHandler: nil)
     }
-
     
-    
-    
-    
-    
-//Mark: SDLManagerDelegate Methods
+    func sendRequest(rpcRequest: SDLRPCRequest, handler: @escaping SDLResponseHandler) {
+        self.sdlManager.send(rpcRequest) { (request, response, error) in
+            handler(request, response, error)
+        }
+    }
+    // MARK: SDLManagerDelegate Methods
     func managerDidDisconnect() {
-      self.firstTimeState = .none
-      self.initialShowState = .none
-      self.isHmiReady = false
-      self.firstTimeHMIFull = false
+        self.firstTimeState = .none
+        self.initialShowState = .none
+        self.isHmiReady = false
+        self.firstTimeHMIFull = false
         self.stopVideoSession()
         self.stopAudioSession()
     }
-
+    
     func hmiLevel(_ oldLevel: SDLHMILevel, didChangeTo newLevel: SDLHMILevel) {
-       
         self.isHmiReady = newLevel.isEqual(to: SDLHMILevel.full())
-        if (!newLevel.isEqual(to: SDLHMILevel.none()) && self.firstTimeState == .none) {
+        if (!newLevel.isEqual(to: SDLHMILevel.none())
+            && self.firstTimeState == .none) {
             self.firstTimeState = .nonNone
         }
         
         if (newLevel.isEqual(to: SDLHMILevel.full()) && self.firstTimeHMIFull) {
             self.firstTimeHMIFull = false
-            //发送视频
+            
+            self.readyToStartVideoSession()
         }
-        else if (oldLevel.isEqual(to: SDLHMILevel.full()) && newLevel.isEqual(to: SDLHMILevel.none())){
+        else if (oldLevel.isEqual(to: SDLHMILevel.full()) && newLevel.isEqual(to: SDLHMILevel.none())) {
             
         }
         
         if (oldLevel.isEqual(to: SDLHMILevel.none()) && newLevel.isEqual(to: SDLHMILevel.full())) {
-            //发送视频
+            self.readyToStartVideoSession()
         }
     }
     
-    //Mark: SDLProxyListener methods
+    // MARK: SDLProxyListener methods
     func on(_ notification: SDLOnDriverDistraction!) {
     }
+    
     func on(_ notification: SDLOnHMIStatus!) {
     }
+    
     func onProxyClosed() {
     }
+    
     func onProxyOpened() {
     }
+    
     func on(_ notification: SDLOnTouchEvent!) {
-        
+        if !self.isBackgroundStated {
+            if let noti = notification {
+                self.performSelector(onMainThread: #selector(self.performTouchEvent), with: noti, waitUntilDone: true, modes: [RunLoopMode.commonModes.rawValue])
+            }
+        }
     }
     
-    //Mark: Private methods
+    // MARK: Private methods
     @objc func performTouchEvent(event: SDLOnTouchEvent) {
         self.delegate?.sdlManager(self, didReceived: event)
     }
     
-    @objc func didReceiveRegisterAppInterfaceResponse(notification:SDLRPCResponseNotification){
-        if let response = notification.response as?
-            SDLRegisterAppInterfaceResponse {
-            if response.success.boolValue{
+    @objc func didReceiveRegisterAppInterfaceResponse(notification: SDLRPCResponseNotification) {
+        if let response = notification.response as? SDLRegisterAppInterfaceResponse {
+            if response.success.boolValue {
                 self.firstTimeHMIFull = true
                 self.screenWidth = response.displayCapabilities.screenParams.resolution.resolutionWidth.floatValue
                 self.screenHeight = response.displayCapabilities.screenParams.resolution.resolutionHeight.floatValue
+                
                 let version = response.systemSoftwareVersion
                 print("systemSoftwareVersion = \(String(describing: version))")
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

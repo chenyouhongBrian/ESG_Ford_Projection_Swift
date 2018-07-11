@@ -96,8 +96,11 @@ extension AppDelegate{
         }
         
         if touchEvents.count > 0 {
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate,let window = appDelegate.window {
-                //window.handleSDLOnTouchEvents(touchEvents: touchEvents, fordWindowSize: self.fordWindowSize)
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                let window = appDelegate.window {
+               window.handleSDLOntouchEvents(touchEvents: touchEvents, fordWindowSize: self.fordWindowSize)
+                
+//                window.handleSDLOnTouchEvents(touchEvents: touchEvents, fordWindowSize: self.fordWindowSize)
             }
         }
     }
