@@ -57,6 +57,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
        
         print("11-------------------------------------didFinishLaunchingWithOptions)");
         
+       // IFlySetting.setLogFile(rawValue: -1)
+        IFlySetting.showLogcat(true)
+        
+//        var mypaths:NSArray = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,NSSearchPathDomainMask.UserDomainMask,true)
+        
+        let appID = "5b600f0c"
+        let initString = "appid=\(appID)"
+        IFlySpeechUtility.createUtility(initString)
+        
+        
+        
+        
         return true
     }
 
@@ -111,6 +123,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    //讯飞
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        IFlySpeechUtility.getUtility().handleOpen(url)
+        return true
+    }
+     
 }
 
 

@@ -9,38 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDLProjectionDemo/AppDelegate.swift"
-            timestampString = "553073498.840281"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "applicationDidBecomeActive(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SDLProjectionDemo/AppDelegate.swift"
-            timestampString = "553073498.840391"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "applicationDidBecomeActive(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SDLProjectionDemo/AppDelegate+Extension.swift"
             timestampString = "553073498.84048"
             startingColumnNumber = "9223372036854775807"
@@ -57,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SDLProjectionDemo/ProxyManager.swift"
-            timestampString = "553073498.840553"
+            filePath = "SDLProjectionDemo/ProjectionVHAController.swift"
+            timestampString = "557029357.306285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "startCapture()"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "onResults(_:isLast:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SDLProjectionDemo/ProjectionVHAController.swift"
+            timestampString = "557029357.30696"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "okAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

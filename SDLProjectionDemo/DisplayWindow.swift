@@ -10,12 +10,69 @@ import UIKit
 
 class DisplayWindow: UIWindow {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var windowName : String = "Hello"
+    
+    var sharedApplication : UIApplication?
+    
+    var previousKeyWindow : UIWindow?
+    
+    convenience init(frame:CGRect, windowName:String, sharedApplication:UIApplication) {
+        
+        self.init(frame: frame)
     }
-    */
+    
+    
+//    func initWithFrame(frame:CGRect, windowName:String, sharedApplication:UIApplication) -> UIWindow {
+//        self = super.init(frame:frame)
+//        if (self) {
+//            windowName = windowName
+//            sharedApplication = sharedApplication
+//        }
+//        return self
+//    }
+    
+    func clearWindowDisplay() {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

@@ -32,7 +32,8 @@ class ProjectionCAQController: UIViewController {
         vhaView?.isHidden = true
         webView?.isHidden = false
     }
-    
-
-
 }
+
+
+
+

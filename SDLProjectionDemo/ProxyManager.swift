@@ -55,8 +55,7 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
         get {
             print("1-------------------------------------self.sdlManager.streamManager?.audioSessionConnected")
             return (self.sdlManager.streamManager?.audioSessionConnected)!
-        }
-    }
+        }                                                    }
     var screenWidth = Float(800.0)
     var screenHeight = Float(348.0)
     
@@ -82,8 +81,9 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
         lifecycleConfig.language = SDLLanguage.zh_CN()
         lifecycleConfig.languagesSupported = [SDLLanguage.zh_CN(), SDLLanguage.en_US(), SDLLanguage.en_GB()]
         
-        let lockScreen = SDLLockScreenConfiguration.disabled()
+       // let lockScreen = SDLLockScreenConfiguration.disabled()
        
+        let lockScreen = SDLLockScreenConfiguration.enabled()
         let config = SDLConfiguration.init(lifecycle: lifecycleConfig, lockScreen: lockScreen)
         self.sdlManager = SDLManager.init(configuration: config, delegate: self)
         
@@ -101,9 +101,14 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
                 self.sdlManager.proxy?.removeDelegate(self)
                 self.sdlManager.proxy?.addDelegate(self)
                 self.connected = true
+                
+                
             }
                 else {
                     self.connected = false
+                
+                
+                
             }
         }
     }

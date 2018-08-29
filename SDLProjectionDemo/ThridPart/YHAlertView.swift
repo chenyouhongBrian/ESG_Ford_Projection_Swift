@@ -385,7 +385,7 @@ class YHAlertView : UIView{
     }
     
     // MARK: - Action
-    func _clickOther(sender:UIButton){
+    @objc func _clickOther(sender:UIButton){
         var buttonIndex:Int = 0
         if _cancelButtonTitle?.isEmpty == false {
             buttonIndex = 1
@@ -402,7 +402,7 @@ class YHAlertView : UIView{
 
     }
 
-     func _clickCancel(sender:UIButton){
+    @objc func _clickCancel(sender:UIButton){
 
         delegate?.alertView(alertView: self, clickedButtonAtIndex: 0)
         if let aBlock = _clickButtonBlock {

@@ -12,5 +12,6 @@
 #import "SmartDeviceLink.h"
 #import "PTFakeTouch.h"
 #import "FMCSecurityManager.h"
+#import "IFlyMSC/IFlyMSC.h"
 
 #endif /* SDLProjectionDemo_Bridging_Header_h */
