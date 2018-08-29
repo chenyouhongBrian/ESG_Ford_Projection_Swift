@@ -55,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         let manager = ProxyManager.sharedInstance
         manager.delegate = self
        
+        print("11-------------------------------------didFinishLaunchingWithOptions)");
+        
         return true
     }
 
@@ -86,26 +88,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
+        print("12-------------------------------------applicationDidBecomeActive)");
+         
         let manager = ProxyManager.sharedInstance
         manager.isBackgroundStated = false
         
         if manager.connected {
-            self.stopVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: manager, selector: #selector(manager.stopVideoSession), userInfo: nil, repeats: false)
-            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(manager.startVideoSession), userInfo: nil, repeats: false)
+             print("14-------------------------------------manager.startVideoSession)");
+            self.stopVideoSessionTimer = Timer.scheduledTimer(timeInterval: 1, target: manager, selector: #selector(manager.stopVideoSession), userInfo: nil, repeats: false)
+           
+            self.startVideoSessionTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(manager.startVideoSession), userInfo: nil, repeats: false)
         }  
         manager.startConnect()
         if self.becomeActiveShouldResumeWindow {
+             print("16-------------------------------------becomeActiveShouldResumeWindow)");
+            
             self.becomeActiveShouldResumeWindow = false
-            self.resumeWindowTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.onDisconnectFord), userInfo: nil, repeats: false)
+            self.resumeWindowTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onDisconnectFord), userInfo: nil, repeats: false)
         }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-
 }
 
 

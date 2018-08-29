@@ -30,7 +30,7 @@ extension AppDelegate{
         let manager = ProxyManager.sharedInstance
         if manager.connected {
             self.onConnectFord()
-        }else {
+        } else {
             if manager.isBackgroundStated {
                 self.becomeActiveShouldResumeWindow = true
             }else{

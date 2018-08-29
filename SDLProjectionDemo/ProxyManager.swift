@@ -53,6 +53,7 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
     }
     var isAudioSessionConnected: Bool {
         get {
+            print("1-------------------------------------self.sdlManager.streamManager?.audioSessionConnected")
             return (self.sdlManager.streamManager?.audioSessionConnected)!
         }
     }
@@ -82,8 +83,11 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
         lifecycleConfig.languagesSupported = [SDLLanguage.zh_CN(), SDLLanguage.en_US(), SDLLanguage.en_GB()]
         
         let lockScreen = SDLLockScreenConfiguration.disabled()
+       
         let config = SDLConfiguration.init(lifecycle: lifecycleConfig, lockScreen: lockScreen)
         self.sdlManager = SDLManager.init(configuration: config, delegate: self)
+        
+        print("2-------------------------------------SDLManager.init(configuration: config, delegate: self)")
         
     }
     
@@ -98,19 +102,22 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
                 self.sdlManager.proxy?.addDelegate(self)
                 self.connected = true
             }
-            else {
-                self.connected = false
+                else {
+                    self.connected = false
             }
         }
     }
     func readyToStartVideoSession() {
         if (!self.isHmiReady) {
+             print("3-------------------------------------!self.isHmiReady")
             return
         }
         if (!self.sdlManager.permissionManager.isRPCAllowed("OnTouchEvent")) {
+        
             return
         }
         if (self.isVideoSessionConnected) {
+                 print("4-------------------------------------self.isVideoSessionConnected\(self.isVideoSessionConnected)")
             return;
         }
         let bitrate = 2048
@@ -119,9 +126,9 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
                                     kVTCompressionPropertyKey_AverageBitRate: (bitrate * 1024),
                                     kVTCompressionPropertyKey_ExpectedFrameRate: (20)] as [CFString : Any]
         self.sdlManager.streamManager?.videoEncoderSettings = videoEncoderSettings
-        
+         print("13-------------------------------------readyToStartVideoSession()");
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.sdlManager.streamManager?.startVideoSession(withTLS: .authenticateOnly, start: { (success, encryption, error) in
+            print("5-------------------------------------self.sdlManager.streamManager?.startVideoSession"); self.sdlManager.streamManager?.startVideoSession(withTLS: .authenticateOnly, start: { (success, encryption, error) in
                 if (!success) {
                     if let err = error {
                         print("err = \(err)")
@@ -141,6 +148,7 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
         if (!self.isVideoSessionConnected) {
             return false
         }
+        print("6-------------------------------------sendVideoData");
         let ret = self.sdlManager.streamManager?.sendVideoData(imageBuffer)
         return ret!
     }
@@ -156,12 +164,14 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
             startBlock(true, true, nil)
             return
         }
+           print("16-------------------------------------manager.startVideoSession)");
         let flag = SDLEncryptionFlag.authenticateOnly
         self.sdlManager.streamManager?.startVideoSession(withTLS: flag, start: { (success, encryption, error) in
             startBlock(success, encryption, error)
         })
     }
     @objc func startVideoSession() {
+           print("15-------------------------------------manager.startVideoSession)");
         self.startVideoSessionWithCompletion { (success, encryption, error) in
         }
     }
@@ -187,6 +197,7 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
     
     func startCapture() {
         //        captureQueue.syn
+        print("7-------------------------------------startCapture");
         self.captureQueue.sync {
             if !self.isCapturing {
                 let currentRunLoop = RunLoop.main
@@ -207,12 +218,15 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
     }
     
     @objc func render(displayLink: CADisplayLink) {
+         print("8-------------------------------------render");
         if self.isVideoSessionConnected && !self.isBackgroundStated {
+            print("9-------------------------------------self.isVideoSessionConnected");
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 if let window = appDelegate.window {
                     if window.frame.isEmpty {
                         return
                     }
+                    print("10-------------------------------------self.sendVideoData(imageBuffer: buffer)");
                     let scale: CGFloat = 1.0
                     if let cgImage = self.snapshot(view: window, scale: scale)?.cgImage {
                         if let buffer = self.getCVPixelBuffer(cgImage) {
@@ -303,6 +317,7 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
     }
     
     func hmiLevel(_ oldLevel: SDLHMILevel, didChangeTo newLevel: SDLHMILevel) {
+       print("10-------------------------------------hmiLevel)");
         self.isHmiReady = newLevel.isEqual(to: SDLHMILevel.full())
         if (!newLevel.isEqual(to: SDLHMILevel.none())
             && self.firstTimeState == .none) {
