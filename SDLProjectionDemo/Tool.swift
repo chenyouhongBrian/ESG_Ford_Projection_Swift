@@ -57,6 +57,11 @@ class Tool: NSObject {
 //        }
 //    }
  
+    func heightForString(value:String, width:CGFloat, size:CGFloat) -> CGFloat {
+        let titleSize : CGSize = value.
+    }
+    
+    
     
 }
 
