@@ -34,11 +34,11 @@ class DetailView: UIView {
         let size2 : CGFloat = CGFloat(16 * Int(Screew / 10))
         contentLabel?.font = UIFont.systemFont(ofSize: size2)
         contentLabel?.numberOfLines = 0
-        contentLabel?.textColor =UIColor.white
-        contentLabel?.textAlignment = NSTextAlignment.left
-        
-        let contentHeigh : CGFloat = 
-        
+//        contentLabel?.textColor =UIColor.white
+//        contentLabel?.textAlignment = NSTextAlignment.left
+//        
+//        let contentHeigh : CGFloat = 
+//        
     }
     
     
