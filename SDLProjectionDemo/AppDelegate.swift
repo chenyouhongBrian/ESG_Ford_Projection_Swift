@@ -28,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         let frame = UIScreen.main.bounds;
         let window = UIWindow.init(frame: frame)
        
-        let caqVc = ProjectionCAQController.init(nibName: nil, bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let CAQcontroller = storyboard.instantiateViewController(withIdentifier: "VCTest")
+        
+        let caqVc = CAQcontroller
         let vhaVc = ProjectionVHAController.init(nibName: nil, bundle: nil)
         let webVc = ProjectionWebController.init(nibName: nil, bundle: nil)
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8654A923213FD65A001EFB62 /* VCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654A922213FD65A001EFB62 /* VCTest.swift */; };
+		869AA401213FC86800A18D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869AA400213FC86800A18D2D /* Main.storyboard */; };
 		892A0054213522D3008DDFD3 /* DisplayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A0053213522D3008DDFD3 /* DisplayWindow.swift */; };
 		893122D5213D26A700B4DD95 /* PScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893122D4213D26A700B4DD95 /* PScrollView.swift */; };
 		893FE2DA20CF6D1600709E6F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893FE2D920CF6D1600709E6F /* UIView+Extension.swift */; };
@@ -424,11 +426,12 @@
 		89E0E1F820B3ECBC0066448E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0E1F720B3ECBC0066448E /* ViewController.swift */; };
 		89E0E1FD20B3ECBD0066448E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E0E1FC20B3ECBD0066448E /* Assets.xcassets */; };
 		89E0E20020B3ECBD0066448E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E0E1FE20B3ECBD0066448E /* LaunchScreen.storyboard */; };
-		89F6F84920DA44FC0036BFE1 /* ProjectionCAQController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6F84720DA44FB0036BFE1 /* ProjectionCAQController.swift */; };
 		89F6F84A20DA44FC0036BFE1 /* ProjectionCAQController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F6F84820DA44FB0036BFE1 /* ProjectionCAQController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8654A922213FD65A001EFB62 /* VCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTest.swift; sourceTree = "<group>"; };
+		869AA400213FC86800A18D2D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		892A0053213522D3008DDFD3 /* DisplayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWindow.swift; sourceTree = "<group>"; };
 		893122D4213D26A700B4DD95 /* PScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PScrollView.swift; sourceTree = "<group>"; };
 		893FE2D920CF6D1600709E6F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -1233,7 +1236,6 @@
 		89E0E1FC20B3ECBD0066448E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89E0E1FF20B3ECBD0066448E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89E0E20120B3ECBD0066448E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89F6F84720DA44FB0036BFE1 /* ProjectionCAQController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionCAQController.swift; sourceTree = "<group>"; };
 		89F6F84820DA44FB0036BFE1 /* ProjectionCAQController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectionCAQController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2260,7 +2262,6 @@
 				893122D4213D26A700B4DD95 /* PScrollView.swift */,
 				893FE2D920CF6D1600709E6F /* UIView+Extension.swift */,
 				893FE2DB20CF6D2A00709E6F /* UIWindow+Extension.swift */,
-				89F6F84720DA44FB0036BFE1 /* ProjectionCAQController.swift */,
 				89F6F84820DA44FB0036BFE1 /* ProjectionCAQController.xib */,
 				89DA8C3520EE17E2002A9DEA /* ProjectionVHAController.swift */,
 				89DA8C3620EE17E2002A9DEA /* ProjectionVHAController.xib */,
@@ -2275,6 +2276,8 @@
 				89E0E1FC20B3ECBD0066448E /* Assets.xcassets */,
 				89E0E1FE20B3ECBD0066448E /* LaunchScreen.storyboard */,
 				89E0E20120B3ECBD0066448E /* Info.plist */,
+				869AA400213FC86800A18D2D /* Main.storyboard */,
+				8654A922213FD65A001EFB62 /* VCTest.swift */,
 			);
 			path = SDLProjectionDemo;
 			sourceTree = "<group>";
@@ -2365,6 +2368,7 @@
 				89C751F020B6A2EB0086FACC /* lock_arrow_down_white@2x.png in Resources */,
 				89C751EC20B6A2EB0086FACC /* lock_arrow_up_white.png in Resources */,
 				89C751ED20B6A2EB0086FACC /* lock_arrow_up_black@2x.png in Resources */,
+				869AA401213FC86800A18D2D /* Main.storyboard in Resources */,
 				89C751F220B6A2EB0086FACC /* lock_arrow_down_white.png in Resources */,
 				89C751E520B6A2EB0086FACC /* sdl_logo_white@2x.png in Resources */,
 				89C751E620B6A2EB0086FACC /* sdl_logo_white.png in Resources */,
@@ -2562,7 +2566,6 @@
 				89C752CF20B6A2EC0086FACC /* SDLGetSystemCapabilityResponse.m in Sources */,
 				89C7530620B6A2EC0086FACC /* SDLImageField.m in Sources */,
 				89C7532C20B6A2EC0086FACC /* SDLProtocolMessage.m in Sources */,
-				89F6F84920DA44FC0036BFE1 /* ProjectionCAQController.swift in Sources */,
 				89C7528220B6A2EB0086FACC /* SDLTireStatus.m in Sources */,
 				89C752E520B6A2EC0086FACC /* SDLPrioritizedObjectCollection.m in Sources */,
 				89C7525920B6A2EB0086FACC /* SDLDiagnosticMessageResponse.m in Sources */,
@@ -2712,6 +2715,7 @@
 				89C7525020B6A2EB0086FACC /* SDLEndAudioPassThru.m in Sources */,
 				89C7521320B6A2EB0086FACC /* SDLTTSChunk.m in Sources */,
 				89C752E920B6A2EC0086FACC /* SDLListFilesResponse.m in Sources */,
+				8654A923213FD65A001EFB62 /* VCTest.swift in Sources */,
 				89C7531720B6A2EC0086FACC /* SDLMetadataType.m in Sources */,
 				89B5B17921214BF0002A47E2 /* EnScrollView.swift in Sources */,
 				89C7526720B6A2EB0086FACC /* SDLScrollableMessage.m in Sources */,
@@ -2914,7 +2918,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9E9SE5A7N8;
+				DEVELOPMENT_TEAM = 4Y948U4NHF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2934,7 +2938,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FMCSecurity/debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SDLProjectionDemo/SDLProjectionDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2947,7 +2951,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9E9SE5A7N8;
+				DEVELOPMENT_TEAM = 4Y948U4NHF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2967,7 +2971,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FMCSecurity/release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = projection.SDLProjectionSwift11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SDLProjectionDemo/SDLProjectionDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

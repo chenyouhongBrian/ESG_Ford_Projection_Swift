@@ -61,6 +61,43 @@ class Tool: NSObject {
        return textSize.height
     }
     
+    class func getBGColorByPMValue(_ pmValue: Int) -> UIColor {
+        var color = UIColor()
+        
+        if pmValue <= 35 {
+            color = UIColor(red: 143 / 255.0, green: 208 / 255.0, blue: 188 / 255.0, alpha: 1.0)
+            
+        } else if pmValue <= 75 {
+            color = UIColor(red: 139 / 255.0, green: 194 / 255.0, blue: 74 / 255.0, alpha: 1.0)
+            
+        } else if pmValue <= 115 {
+            color = UIColor(red: 223 / 255.0, green: 196 / 255.0, blue: 45 / 255.0, alpha: 1.0)
+            
+        } else if pmValue <= 150 {
+            color = UIColor(red: 151 / 255.0, green: 140 / 255.0, blue: 0 / 255.0, alpha: 1.0)
+            
+        } else if pmValue <= 250 {
+            color = UIColor(red: 229 / 255.0, green: 57 / 255.0, blue: 55 / 255.0, alpha: 1.0)
+            
+        } else if pmValue <= 350 {
+            color = UIColor(red: 97 / 255.0, green: 79 / 255.0, blue: 131 / 255.0, alpha: 1.0)
+            
+        } else {
+            color = UIColor(red: 60 / 255.0, green: 60 / 255.0, blue: 52 / 255.0, alpha: 1.0)
+        }
+        return color
+    }
+    
+    class func getNewColorWith(color: UIColor, andAlpha: CGFloat) -> UIColor {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let newColor = UIColor(red: red, green: green, blue: blue, alpha: andAlpha)
+        return newColor
+    }
+    
     
         
         
