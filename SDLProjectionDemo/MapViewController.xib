@@ -20,16 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="790" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-9w-LY4">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-9w-LY4">
                     <rect key="frame" x="0.0" y="0.0" width="790" height="330"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-Jz-kCV">
-                    <rect key="frame" x="0.0" y="0.0" width="132" height="83"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.37178117040000003" green="0.84396725890000002" blue="0.60531532759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <state key="normal" title="返回">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-Jz-kCV">
+                    <rect key="frame" x="14" y="0.0" width="64" height="64"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="dHc-dH-qNh"/>
+                        <constraint firstAttribute="height" constant="64" id="gcv-na-qaw"/>
+                    </constraints>
+                    <state key="normal" image="backCirle">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -38,8 +39,19 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Y0y-9w-LY4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0ke-Ag-ofA"/>
+                <constraint firstItem="9kS-Jz-kCV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DQP-OO-DwI"/>
+                <constraint firstItem="Y0y-9w-LY4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="FgS-b2-pj2"/>
+                <constraint firstItem="Y0y-9w-LY4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QpC-RH-dwJ"/>
+                <constraint firstItem="9kS-Jz-kCV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="fJI-Dt-7gI"/>
+                <constraint firstItem="Y0y-9w-LY4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="hhv-Xe-f0w"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="backCirle" width="64" height="64"/>
+    </resources>
 </document>

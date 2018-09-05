@@ -65,10 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         let appID = "5b600f0c"
         let initString = "appid=\(appID)"
         IFlySpeechUtility.createUtility(initString)
-        
-        
-        
-        
+    
         return true
     }
 

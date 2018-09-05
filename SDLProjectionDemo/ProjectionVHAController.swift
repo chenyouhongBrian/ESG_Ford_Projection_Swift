@@ -8,6 +8,9 @@
 
 import UIKit
 
+let ScreenWidth = UIScreen.main.bounds.size.width
+let ScreenHeight = UIScreen.main.bounds.size.height
+
 class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IFlySpeechRecognizerDelegate {
 
     @IBOutlet weak var alertButton: UIButton!
@@ -36,14 +39,17 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     
     @IBOutlet weak var alertView: UIView!
     
-    var engineArray: NSMutableArray?
-    var exhaustArray: NSMutableArray?
-    var fuelArray: NSMutableArray?
-    var steerArray: NSMutableArray?
-    var tireArray: NSMutableArray?
+    var engineArray: Array<String> = []
+    var exhaustArray: Array<String> = []
+    var fuelArray: Array<String> = []
+    var steerArray: Array<String> = []
+    var tireArray: Array<String> = []
+    var randomArray: Array<String> = []
     
     var alertController: UIAlertController?
     var mapAlert: YHAlertView?
+    
+    var detailScrollView: PScrollView = PScrollView()
     
     //语音
     var iFlySpeechSynthesizer: IFlySpeechSynthesizer?
@@ -55,20 +61,18 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let string1 = "是"
-        if string1.contains("是") {
-            print("99999999999999999999999999999999999")
-        }
-        
-        
-        
+        //事故详细视图
+        detailScrollView.backgroundColor = UIColor.black
+        detailScrollView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
+        detailScrollView.alpha = 0.8
+        detailScrollView.isScrollEnabled = true
+        detailScrollView.showsVerticalScrollIndicator = true
+        detailScrollView.isUserInteractionEnabled = true
         
         
         //模拟维修提示
-        let alertArray = ["E17"]
-        self.setUpVHAProjectionViewByArray(alertArray as NSArray)
+        randomArray = ["E17"]
+        self.setUpVHAProjectionViewByArray(randomArray)
   
         //横屏
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
@@ -101,7 +105,7 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         
     }
     
-    func setUpVHAProjectionViewByArray(_ array: NSArray)  {
+    func setUpVHAProjectionViewByArray(_ array: Array<String>)  {
         let engine = ["E17","E26"]
         let exhaust = ["E07","E08","F26"];
         let fuel = ["E10","E13","E20"];
@@ -124,36 +128,36 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         alertButton.setTitle("Alert \(array.count)", for: UIControlState.normal)
         
         for number in array {
-            if engine.contains(number as! String) {
+            if engine.contains(number) {
                 engineAlert.isHidden = false
                 engineImage.isHidden = false
-                engineArray?.add(number)
+                engineArray.append(number)
             }
             
-            if exhaust.contains(number as! String) {
+            if exhaust.contains(number) {
                 exhaustAlert.isHidden = false
-                exhaustArray?.add(number)
+                exhaustArray.append(number)
             }
             
-            if fuel.contains(number as! String) {
+            if fuel.contains(number) {
                 fuelAlert.isHidden = false
                 fuelImage.isHidden = false
-                fuelArray?.add(number)
+                fuelArray.append(number)
             }
             
-            if steer.contains(number as! String) {
+            if steer.contains(number) {
                 steerAlert.isHidden = false
-                steerArray?.add(number)
+                steerArray.append(number)
             }
             
-            if tire.contains(number as! String) {
+            if tire.contains(number) {
                 view.bringSubview(toFront: tireAlert)
                 tireImage1.isHidden = false
                 tireImage2.isHidden = false
                 tireImage3.isHidden = false
                 tireImage4.isHidden = false
                 tireAlert.isHidden = false
-                tireArray?.add(number)
+                tireArray.append(number)
             }
         }
     }
@@ -180,63 +184,66 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     
     @IBAction func alertButtonAction(_ sender: Any) {
         
-        
-        
+        print("randomArray ---- \(randomArray)")
+        var titleArray : Array<String> = []
+//        if engineArray.count > 0{
+//            titleArray.append(engineArray)
+//        }
+//        if engineArray.count > 0{
+//            titleArray.append(engineArray)
+//        }
+//        if engineArray.count > 0{
+//            titleArray.append(engineArray)
+//        }
+//        if engineArray.count > 0{
+//            titleArray.append(engineArray)
+//        }
+//        if engineArray.count > 0{
+//            titleArray.append(engineArray)
+//        }
+//
+           self.setScrollViewByArray(detailArray: randomArray)
     }
    
     @IBAction func callDealerAction(_ sender: Any) {
-        engineArray?.removeAllObjects()
-        exhaustArray?.removeAllObjects()
-        fuelArray?.removeAllObjects()
-        steerArray?.removeAllObjects()
-        tireArray?.removeAllObjects()
+        engineArray.removeAll()
+        exhaustArray.removeAll()
+        fuelArray.removeAll()
+        steerArray.removeAll()
+        tireArray.removeAll()
     }
     
     @IBAction func randomAction(_ sender: Any) {
-        engineArray?.removeAllObjects()
-        exhaustArray?.removeAllObjects()
-        fuelArray?.removeAllObjects()
-        steerArray?.removeAllObjects()
-        tireArray?.removeAllObjects()
+        engineArray.removeAll()
+        exhaustArray.removeAll()
+        fuelArray.removeAll()
+        steerArray.removeAll()
+        tireArray.removeAll()
         
-        whichSentence = "1级"
-        alertController = UIAlertController(title: "VHA", message: "是否到就近维修店进行维修", preferredStyle: UIAlertControllerStyle.alert)
+        let alertArray = ["E17","E26","E07","E08","F26","E10","E13","E20","F29","E27","E28","E29"]
         
-        let cancelAction = UIAlertAction(title: "否", style: UIAlertActionStyle.default) { (cancelAction) in
-           
-            self.cancelAction()
-         //   self.alertController?.dismiss(animated: true, completion: nil)
-        }
+        randomArray = alertArray.shuffleRandomCount()
         
-        let okAction = UIAlertAction(title: "是", style: UIAlertActionStyle.default) { (okAction) in
-//            self.alertController?.dismiss(animated: true, completion: nil)
-//            let mapVC = MapViewController.init(nibName: "MapViewController", bundle: nil)
+        self.setUpVHAProjectionViewByArray(randomArray)
+        
+      
+//        alertController = UIAlertController(title: "VHA", message: "是否到就近维修店进行维修", preferredStyle: UIAlertControllerStyle.alert)
 //
-//            self.present(mapVC, animated: true, completi on: nil)
-            self.okAction()
-        }
+//        let cancelAction = UIAlertAction(title: "否", style: UIAlertActionStyle.default) { (cancelAction) in
+//            self.cancelAction()
+//        }
+//
+//        let okAction = UIAlertAction(title: "是", style: UIAlertActionStyle.default) { (okAction) in
+//            self.okAction()
+//        }
+//
+//        alertController?.addAction(cancelAction)
+//        alertController?.addAction(okAction)
+//
+//        self.present(alertController!, animated: true, completion: nil)
         
-        alertController?.addAction(cancelAction)
-        alertController?.addAction(okAction)
-        
-        self.present(alertController!, animated: true, completion: nil)
-        
-        //获取语音合成单例
-        iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
-        iFlySpeechSynthesizer?.delegate = self
-        //启动合成会话
-        let text = "发动机机油压力低,是否到就近维修店进行维修"
-        iFlySpeechSynthesizer?.startSpeaking(text)
-
-        self.initRecognizer()
-        
-        let string1 = "是"
-        if string1.contains("是") {
-            print("99999999999999999999999999999999999")
-        }else {
-            print("66666666666666666666666666666666666")
-        }
-        
+      
+      
     }
  
     func cancelAction() {
@@ -245,6 +252,8 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         iFlySpeechRecognizer?.cancel()
         iFlySpeechRecognizer?.stopListening()
     }
+    
+    
     func okAction() {
        
         
@@ -289,33 +298,120 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             default:
                 break
             }
-            
         }
-        
-        
-       
-    
     }
     
-    
     @IBAction func engineAlertAction(_ sender: Any) {
+       
+    self.setScrollViewByArray(detailArray: engineArray)
+
+    }
+    
+    func setScrollViewByArray(detailArray:Array<String>) {
+        detailScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        if detailArray.count > 0 {
+            for view:UIView in detailScrollView.subviews{
+                view.removeFromSuperview()
+            }
+            
+            whichSentence = "1级"
+            //获取语音合成单例
+            iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
+            iFlySpeechSynthesizer?.delegate = self
+            //启动合成会话
+            let text = "汽车故障提示，是否到就近维修店进行维修"
+            iFlySpeechSynthesizer?.startSpeaking(text)
+            
+            self.initRecognizer()
+            
+            
+            let warningView : UIView = UIView.init(frame: CGRect(x: 20, y: 5, width: ScreenWidth - 40, height: 100))
+            warningView.backgroundColor = UIColor.black
+             detailScrollView.addSubview(warningView)
+            let warningLabel : UILabel = UILabel.init(frame: CGRect(x: 40, y: 5, width: 250, height: 90))
+            warningLabel.font = UIFont.systemFont(ofSize: 22)
+            warningLabel.adjustsFontSizeToFitWidth = true
+            warningLabel.numberOfLines = 2
+            warningLabel.text = "汽车故障提示，是否到就近维修店进行维修"
+            warningLabel.textColor = UIColor.white
+            warningView.addSubview(warningLabel)
+            
+            let noButton : UIButton = UIButton.init(type: UIButtonType.custom)
+            noButton.setImage(UIImage.init(named: "no"), for: UIControlState.normal)
+            noButton.frame = CGRect(x: 350, y: 10, width: 90, height: 90)
+            let yesButton : UIButton = UIButton.init(type: UIButtonType.custom)
+            yesButton.setImage(UIImage.init(named: "ok"), for: UIControlState.normal)
+            yesButton.frame = CGRect(x: 550, y: 10, width: 90, height: 90)
+            warningView.addSubview(noButton)
+            warningView.addSubview(yesButton)
+            noButton.addTarget(self, action: #selector(noAction), for: UIControlEvents.touchUpInside)
+            yesButton.addTarget(self, action: #selector(yesAction), for: UIControlEvents.touchUpInside)
+            
+            let lineView : UIView = UIView.init(frame: CGRect(x: 20, y: warningView.bounds.size.height + 1, width: warningView.bounds.size.width - 40, height: 1))
+            lineView.backgroundColor = UIColor.init(red: 238/255.0, green: 191/255.0, blue: 45/255.0, alpha: 1)
+            warningView.addSubview(lineView)
         
+            var heightBefore : CGFloat = 110
+            for index in 0..<detailArray.count {
+                let contentArray = Tool.warningContentsByCode(number: detailArray[index])
+                let detailView = DetailView()
+                detailView.contentLabel?.text = contentArray[3]
+                detailView.titleLabel?.text = contentArray[1]
+                detailView.image?.image = UIImage(named: contentArray[2])
+                detailView.setUpView()
+                
+                let height : CGFloat = CGFloat((detailView.contentLabel?.bounds.size.height)!)
+               
+                let y : CGFloat =  heightBefore
+                detailView.frame = CGRect(x: 40, y: y, width: ScreenWidth - 80, height: height)
+                
+                detailScrollView.addSubview(detailView)
+                let preY : CGFloat = CGFloat(ScreenWidth / 10 + 20)
+                heightBefore = heightBefore + (detailView.contentLabel?.bounds.size.height)! + preY + 20
+            }
+           
+            let limitHeight : CGFloat = heightBefore + 20
+            print("limitHeight ------ \(limitHeight)")
+            if(limitHeight < ScreenHeight) {
+                detailScrollView.contentSize = CGSize(width: ScreenWidth, height: ScreenHeight)
+            }else{
+                detailScrollView.contentSize = CGSize(width: ScreenWidth, height: limitHeight)
+            }
+            self.view.addSubview(detailScrollView)
+        }
+    }
+    
+    @objc func noAction() {
+        detailScrollView.removeFromSuperview()
+    }
+    
+    @objc func yesAction() {
+        detailScrollView.removeFromSuperview()
+        self.okAction()
     }
     
     @IBAction func fuelAlertAction(_ sender: Any) {
+        self.setScrollViewByArray(detailArray: fuelArray)
+        
         
     }
     
     @IBAction func steerAlertAction(_ sender: Any) {
         
+         self.setScrollViewByArray(detailArray: steerArray)
+        
     }
     
     @IBAction func tireAlertAction(_ sender: Any) {
+        
+         self.setScrollViewByArray(detailArray: tireArray)
         
     }
     
     @IBAction func exhaustAlertAction(_ sender: Any) {
      
+        self.setScrollViewByArray(detailArray: exhaustArray)
+        
     }
     
     override var shouldAutorotate:Bool{
@@ -390,7 +486,7 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     }
 
    // 解析听写json格式的数据
-   // params例如：
+     // params例如：
    // {"sn":1,"ls":true,"bg":0,"ed":0,"ws":[{"bg":0,"cw":[{"w":"白日","sc":0}]},{"bg":0,"cw":[{"w":"依山","sc":0}]},{"bg":0,"cw":[{"w":"尽","sc":0}]},{"bg":0,"cw":[{"w":"黄河入海流","sc":0}]},{"bg":0,"cw":[{"w":"。","sc":0}]}]}
    
     func stringFromJson(params : NSString?) -> NSString? {

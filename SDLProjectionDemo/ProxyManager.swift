@@ -106,9 +106,6 @@ class ProxyManager : NSObject, SDLManagerDelegate, SDLProxyListener {
             }
                 else {
                     self.connected = false
-                
-                
-                
             }
         }
     }

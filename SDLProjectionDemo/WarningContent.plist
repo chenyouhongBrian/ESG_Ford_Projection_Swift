@@ -8,7 +8,7 @@
 		<string>碰撞预警系统警告</string>
 		<string>The collision warning system has detected either a system fault or blocked sensor. Please clean the grille surface in front of the sensor or remove the obstruction. If the message does not clear after several minutes, please contact your authorized dealer. Please see your Owner&apos;s Manual for reference.</string>
 		<string>碰撞预警系统监测到系统故障或者传感器被阻塞。请先清晰前格栅表面的传感器或者去除障碍物。如果该警告数分钟后无法消除，请及时联系您当地的授权经销商，详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E01</key>
 	<array>
@@ -16,7 +16,7 @@
 		<string>泊车辅助系统故障</string>
 		<string>The parking aid system has detected obstructions. Please clean the front and rear bumper covers or remove the obstruction. If the message does not clear, please contact your authorized dealer.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>泊车辅助系统检测到存在障碍物。请先清理前后保险杠表面覆盖物或移除障碍物。如果该警告无法消除，请及时联系当地授权经销商，详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E02</key>
 	<array>
@@ -24,7 +24,7 @@
 		<string>空气滤清器提示器</string>
 		<string>Your vehicle&apos;s air filter restriction gauge has reached the &quot;change filter&quot; mark due to blockage in the air intake system. The air filter condition should be verified by inspecting the underhood restriction gauge; the message is only a secondary indicator. Always use the underhood restriction gauge to determine when the air filter element needs to be changed. Please consult your Owner&apos;s Manual for more information or contact your authorized dealer for assistance.</string>
 		<string>由于进气系统阻塞，您车辆的空气滤清器已接近更换上限。请检查发动机舱的限位表，了解空气滤清器的实际状态。本信息仅作为辅助指示，请始终以发动机舱的限位表为准，决定何时更换滤芯。详情请参考您的车主手册，或联系您的授权经销商，获得相关帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E03</key>
 	<array>
@@ -32,7 +32,7 @@
 		<string>全轮驱动或四轮驱动系统已关闭</string>
 		<string>The All Wheel Drive (AWD) system has turned off. This may be due to an overheating AWD system or the installation of the compact spare tire. AWD will resume operating once one or both of these conditions are rectified. If neither applies, please contact your authorized dealer. Please see your Owner&apos;s Manual for reference.</string>
 		<string>全轮驱动系统（AWD）已关闭。这可能是由于AWD系统过热或者安装了紧凑型备用轮胎所致。当以上情况消除后，AWD系统将恢复正常。如果仍然无法恢复，请及时联系您当地的授权经销商，详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E04</key>
 	<array>
@@ -40,7 +40,7 @@
 		<string>被动进入被动启动</string>
 		<string>There is a potential issue with your vehicle&apos;s starting security system or your vehicle key&apos;s battery. If &quot;Starting System Fault&quot; is displayed, your vehicle will not start; please contact your authorized dealer as soon as possible. If &quot;Key Battery Low&quot; is displayed, please change the key&apos;s battery as soon as possible. Please consult your Owner&apos;s Manual for more information or contact your authorized dealer for assistance.</string>
 		<string>您爱车的启动安全系统或车钥匙电池存在潜在问题。如果显示“启动系统故障”，您的车辆将无法启动，请尽快联系您的授权经销商。如果显示“钥匙电量低”，请尽快更换钥匙电池。详情请参考您的车主手册，或联系您的授权经销商，获得相关帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E05</key>
 	<array>
@@ -48,7 +48,7 @@
 		<string>柴油发动机怠速关闭</string>
 		<string>If your vehicle has been idling in Park (P) or Neutral (N) for five minutes (with the parking brake set) or 15 minutes (if the parking brake is not set), your vehicle will turn off within 30 seconds of receiving this message. Please consult your Owner&apos;s Manual for more information or contact your authorized dealer for assistance.</string>
 		<string>如果您的爱车在停车档或倒档怠速超过5分钟（拉手刹）或15分钟（未拉手刹），您的车辆将在30秒内熄火，并收到本条通知。详情请参考您的车主手册，或联系您的授权经销商，获得相关帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E06</key>
 	<array>
@@ -56,7 +56,7 @@
 		<string>柴油发动机预热</string>
 		<string>In extremely cold weather (typically around -15°F (-26°C)), if the engine block heater is not utilized, the engine will not respond to accelerator pedal movement for 30 seconds. This is done so engine oil can be properly circulated to avoid engine damage from lack of lubrication. A timer will begin a countdown from 30 seconds. Once the counter has reached 0 seconds, OK TO DRIVE displays and the engine will then respond to accelerator pedal movement. Please consult your Owner&apos;s Manual for more information or contact your authorized dealer for assistance.</string>
 		<string>在非常寒冷的天气下（零下26℃左右），如果不使用发动机预热器，踩下油门踏板30秒内发动机可能无法响应。只有通过这个过程，发动机的燃油才能正常循环，从而避免因缺乏润滑而损伤发动机。计时器将倒计时30秒，当计时器数到0时，将显示“可以开始驾驶”，之后踩下油门踏板，发动机才会响应。详情请参考您的车主手册，或联系您的授权经销商，获得相关帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E07</key>
 	<array>
@@ -80,7 +80,7 @@
 		<string>柴油预热</string>
 		<string>With the key turned to the on position, the Glow Plug Pre-Heat Indicator illuminates if glow plug heat is necessary as a starting aid. Wait until the light goes off before starting. Refer to your Owner&apos;s Manual or Owner&apos;s Manual Diesel Supplement. The glow plugs will continue to be activated for two minutes after the glow plug pre-heat indicator has turned off. The light should always illuminate at least momentarily when the engine is cold and the ignition is turned to on. If it does not illuminate the glow plug system should be checked and repaired promptly to avoid difficulty in cold starting. Contact your authorized dealer as soon as possible. Please consult your Owner&apos;s Manual for more information.</string>
 		<string>当钥匙转到“ON”(开启)位置时，如需预热塞辅助启动，预热塞指示器将亮灯。请耐心等待指示灯熄灭后，再启动车辆。详情请参考您的车主手册或车主手册的柴油车型补充内容。在预热塞指示灯熄灭后，预热塞仍将持续工作2分钟。在发动机冷却状态下，启动点火装置，警示灯应至少瞬时点亮。如未亮灯，请尽快联系您的授权经销商，检查并维修预热塞系统，以避免冷启动遇到困难。请参照您的车主手册，了解更多信息。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E10</key>
 	<array>
@@ -96,7 +96,7 @@
 		<string>燃油加注口未关闭</string>
 		<string>The fuel door is not closed properly. At the next opportunity, safely pull off the road and close the fuel door.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>燃油加注口未正确关闭。请在合适的时机，安全地停靠在路边并且正确关闭燃油加注口。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E12</key>
 	<array>
@@ -104,7 +104,7 @@
 		<string>请检查燃油加注口</string>
 		<string>The fuel inlet may have stuck open or debris may be preventing the inlet from fully closing. At the next opportunity, safely pull off the road, turn off the engine, open the fuel filler door and remove any visible debris from the fuel fill opening by either inserting a fuel fill nozzle or funnel into the inlet until cleared.\nPlease see your Owner’s Manual for reference.</string>
 		<string>燃油加注口未正确关闭，可能被卡住或由于碎屑无法完全关闭。请安全地停靠在路边并关闭发动机，打开加油口，插入加油枪或加油漏斗来清除掉可见碎屑。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E13</key>
 	<array>
@@ -116,11 +116,11 @@
 	</array>
 	<key>600E14_空</key>
 	<array>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
 	</array>
 	<key>600E15</key>
 	<array>
@@ -128,7 +128,7 @@
 		<string>动力总成故障/动力减少</string>
 		<string>A powertrain, all-wheel drive or four-wheel drive fault has been detected. Please have the system inspected by an authorized dealer.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>碰撞预警系统监测到系统故障或者传感器被阻塞。请先清晰前格栅表面的传感器或者去除障碍物。如果该警告数分钟后无法消除，请及时联系您当地的授权经销商，详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E16</key>
 	<array>
@@ -136,7 +136,7 @@
 		<string>发动机冷却液过热</string>
 		<string>An engine overheat condition was detected. Please stop your vehicle as soon as it is safe to do so and switch off the engine. Let the engine cool and check the coolant level. If the warning stays on after your vehicle warms up, please contact an authorized dealer ASAP.\nWARNING: Never remove the coolant reservoir cap while the engine is running or hot.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>检测到发动机过热。请尽快靠边安全停车，并关闭发动机。待发动机冷却后检查冷却液液面高度。如果在热车之后警告未消除，请尽快联系您的林肯中心。警告：严禁在发动机运转或过热时打开冷却液储液罐盖。详情请参考您的车主手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E17</key>
 	<array>
@@ -157,7 +157,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 如已连接挂车，请垂询挂车经销商或使用工具进行维修。
 
 如出现挂车制动模块故障警告：请联系当地授权经销商，详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E19</key>
 	<array>
@@ -165,7 +165,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>玻璃洗涤液液位过低</string>
 		<string>Your vehicle&apos;s windshield washer fluid is low. Please refer to your owner&apos;s manual for instructions on how to add more fluid or contact an authorized dealer for assistance.</string>
 		<string>车辆挡风玻璃的玻璃洗涤液液位过低，请参照您的车主手册，添加洗涤液，或联系您的授权经销商，获得相关帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E20</key>
 	<array>
@@ -181,7 +181,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>防盗指示灯</string>
 		<string>If the Anti-Theft Indicator flashes rapidly or illuminates steadily with ignition turned on, switch the ignition off, then back on to make sure there is no electronic interference with the programmed key. If the vehicle does not start, please try to start it with your spare key and, if successful, contact your authorized dealer for a key replacement. if the indicator still flashes rapidly or is illuminated steadily and your vehicle does not start, please contact your authorized dealer as soon as possible for service. Please refer to your Owner&apos;s Manual for more information.</string>
 		<string>如果防盗指示灯快速闪烁，或在点火装置启动时长亮，请关闭点火装置，并确认钥匙程序未受电子干扰。如果车辆未启动，请尝试使用后备钥匙，若成功启动车辆，请联系您的授权经销商，更换钥匙。如果指示灯仍然快速闪烁，或在发动机点火装置启动时长亮，但车辆并未启动，请尽速联系您的授权经销商。详情请参考您的车主手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E22</key>
 	<array>
@@ -189,7 +189,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>空气悬架/行驶控制系统故障</string>
 		<string>One or more of the following may have occurred in your vehicle&apos;s air suspension system: the load limit may have been exceeded, the system may have been turned off or the system may require servicing. Please consult your Owner&apos;s Manual for more information or contact an authorized dealer for assistance.</string>
 		<string>车辆的空气悬挂系统可能发生了以下一个或多个情况：超过负荷极限，系统已被关闭，或系统需要相关服务。详情请参考您的车主手册，或联系您的授权经销商，以获得帮助。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E23</key>
 	<array>
@@ -197,7 +197,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>TC、IVD或RSC关闭指示</string>
 		<string>Stability Control Off: It will illuminate when you switch the system off. It will go out when you switch the system back on or when you switch the ignition off. Refer to your Owner&apos;s Manual for more information.</string>
 		<string>N/A</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E24</key>
 	<array>
@@ -205,7 +205,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>TC、IVD或 RSC故障</string>
 		<string>There may be a malfunction with your vehicle&apos;s Stability Control system. Please refer to your owner&apos;s manual or contact an authorized dealer for more information.</string>
 		<string>N/A</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E25</key>
 	<array>
@@ -213,7 +213,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>充电系统故障</string>
 		<string>There is an electrical system fault. Please switch off all non-essential electrical equipment and contact an authorized dealer for service.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>存在充电系统故障。请关闭所有不必要的电子设备并联系当地经销商进行检修。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600E26</key>
 	<array>
@@ -253,7 +253,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>约束系统提示灯报警</string>
 		<string>The Restraints Control Module has detected a fault with the supplementary restraint system which includes the air bags and seat belt buckle pretensioners. Please contact your authorized dealer ASAP.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>约束控制模块检测到辅助系统（包括气囊和安全带带扣预警器）出现故障，请尽快联系授权经销商。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F19</key>
 	<array>
@@ -261,7 +261,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>混合动力车-危险</string>
 		<string>A fault has been detected with one or more of the electrical system components. Your vehicle may shut down without warning. Please stop your vehicle as soon as safely possible and attempt to restart it. If the fault remains, please contact your authorized dealer ASAP.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>检测到一个或多个电气系统组件发生故障。您的车辆可能在没有任何警示的情况下熄火。请尽快靠边，安全停车，并尝试重新启动。若故障依旧存在，请尽快联系当地的授权经销商。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F20</key>
 	<array>
@@ -269,7 +269,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>Start/Stop发动机报警</string>
 		<string>A start-stop system or powertrain malfunction has been detected and the start-stop system has been turned off. If your engine has stopped, please restart it. Your fuel consumption may increase while the start-stop system is unavailable. Please contact your authorized dealer ASAP.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>检测到起停系统或动力总成发生故障并且启停系统已被关闭。如果发动机停止运转，请再次启动发动机。启停系统不工作时，您的耗油量将会增加。请尽快联系当地授权经销商。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F21</key>
 	<array>
@@ -277,7 +277,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>照明系统故障</string>
 		<string>NOTE TO 2015 FORD FUSION AND 2015 LINCOLN MKZ OWNERS: PLEASE DISREGARD THIS MESSAGE. IT IS UNLIKELY THAT YOU HAVE A BURNED-OUT EXTERIOR BULB. HOWEVER, WE RECOMMEND THAT YOU INSPECT YOUR VEHICLE EXTERIOR LAMPS AT EVERY SCHEDULED MAINTENANCE INTERVAL.\nA burned out bulb or an electrical system fault in the exterior lamp system has been detected. Please check all exterior bulbs and connectors and contact your authorized dealer if the message persists. Please see your Owner&apos;s Manual for reference.</string>
 		<string>注：致2015年款福特Fusion和2015年款林肯MKZ车主：请忽略此提示，虽然不太可能会出现外部照明系统烧断的情况，但我们还是建议您在定期维护时检查您车辆的外部光源。检测到灯泡断路或外部照明系统发生电子系统故障。如果该消息未消除，请检查所有外灯和连接器并联系授权经销商。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F22</key>
 	<array>
@@ -285,15 +285,15 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>坡道起步辅助警告</string>
 		<string>The Hill Start Assist System has detected a failure. Hill start assist will not be activated when you start from a slope. Please contact your authorized dealer ASAP.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>检测到坡道起步辅助系统发生故障。当您从斜坡启动时，坡道起步辅助系统将无法工作，请尽快联系授权经销商。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F23_空</key>
 	<array>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
-		<string></string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
+		<string>blank</string>
 	</array>
 	<key>600F24</key>
 	<array>
@@ -301,7 +301,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>车道保持辅助</string>
 		<string>2013 ESCAPE OWNERS: PLEASE DISREGARD THIS MESSAGE.\nThe Lane Keeping system has detected a system fault or an obstructed front camera.\nIf the LANE KEEPING AID MALFUNCTION SERVICE REQUIRED or FRONT CAMERA MALFUNCTION SERVICE REQUIRED warning is on, please contact your authorized dealer.\nFRONT CAMERA TEMPORARILY NOT AVAILABLE on: please wait for the system to cool before switching it on.\nFRONT CAMERA LOW VISIBILITY CLEAN SCREEN on: please check the windshield in front of the camera (behind the interior mirror) and remove any possible debris.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>2013福特翼虎车主：请忽略此信息。车道辅助系统检测到系统故障或前置摄像头被阻挡。如果车道辅助系统需要维修服务，或前置摄像头故障需要维修的警告出现，请联系当地授权经销商。前置摄像头暂时失效：请等待系统恢复后再打开。前置摄像头的能见度低，请清洗屏幕：请检查前摄像头的镜头（位于车内后视镜后侧），并清除可见杂物。详情请参阅用户手册</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F25</key>
 	<array>
@@ -309,7 +309,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>坡道车速控制故障警告</string>
 		<string>A fault has been detected in one or more of the Hill Descent Control, Anti-Lock Brake or Roll Stability Control systems. The Hill Descent Control system has been deactivated. You must apply the brakes manually as needed in order to maintain a safe speed. If the fault continues to display, please contact an authorized dealer for service.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>检测到一个或多个系统故障：坡道车速控制系统、制动防抱死或车身稳定控制系统。坡道车速控制系统已被停用，您必须根据路况手动控制刹车，并维持一个安全行驶速度。如果警告提示未消除，请及时联系授权经销商进行维修。详情请参阅用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F26</key>
 	<array>
@@ -325,15 +325,15 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>柴油排放燃料液位低</string>
 		<string>The diesel exhaust fuel level is low and must be replenished in order to operate properly. Please contact your authorized dealer.\nPlease see your Owner&apos;s Manual for reference.</string>
 		<string>柴油机排放燃料液位低时必须加以补充以保证正常工作，请联系您当地的授权经销商。详情请参考用户手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 	<key>600F28</key>
 	<array>
 		<string>HEV Hazard</string>
 		<string>混合动力车 危险</string>
 		<string>A Hybrid system component fault has caused your vehicle to shut down. Your vehicle may require refueling, jump starting, resetting of the shutoff switches or service. Please refer to the Roadside Emergencies chapter in your Owner&apos;s Manual for more information.</string>
-		<string></string>
-		<string></string>
+		<string>blank</string>
+		<string>blank</string>
 	</array>
 	<key>600F29</key>
 	<array>
@@ -354,7 +354,7 @@ Please  see your Owner&apos;s Manual for reference.</string>
 		<string>If BLIND SPOT SYSTEM FAULT or CROSS TRAFFIC SYSTEM FAULT displays, the system may not function. Contact authorized dealer.\nIf BLIND SPOT NOT AVAILABLE/SENSOR BLOCKED SEE MANUAL or CROSS TRAFFIC NOT AVAILABLE/SENSOR BLOCKED SEE MANUAL displays, check exterior vehicle sensors for damage or debris covering them (see Owner&apos;s Manual for sensor locations). If the problem persists, your vehicle requires diagnosis by a technician. Please contact an authorized dealer.\nSee your Owner’s Manual.</string>
 		<string>如果出现“盲区监测系统故障”或“来车监测系统故障”：系统可能无法正常工作。请联系授权经销商。
 如果出现“盲区监测系统不可用/传感器堵塞”或“来车监测系统不可用/传感器堵塞”：请检查外部传感器是否已破损，或是否有异物覆盖在传感器表面（传感器位置请参考车主手册）。如果故障仍然无法解决，你的车辆需要维修，请联系当地授权经销商。详情请参考您的车主手册。</string>
-		<string></string>
+		<string>blank</string>
 	</array>
 </dict>
 </plist>
