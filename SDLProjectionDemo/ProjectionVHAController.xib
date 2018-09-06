@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +15,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectionVHAController" customModule="SDLProjectionDemo" customModuleProvider="target">
             <connections>
                 <outlet property="alertButton" destination="fVS-WT-hW5" id="Fdm-Y7-MN2"/>
-                <outlet property="alertView" destination="kP2-3b-eCG" id="QvM-2S-EAt"/>
                 <outlet property="engineAlert" destination="UDa-N8-3lI" id="GcJ-OK-0Jj"/>
                 <outlet property="engineImage" destination="bzX-eB-RoA" id="Fkg-y0-MOw"/>
                 <outlet property="exhaustAlert" destination="78f-7d-dM5" id="geh-QL-cST"/>
@@ -30,167 +31,198 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="790" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
-                    <rect key="frame" x="-7" y="72" width="82" height="82"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="home_caq_bg"/>
-                    <connections>
-                        <action selector="caqButtonAction:" destination="-1" eventType="touchUpInside" id="bzj-CJ-uCl"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
-                    <rect key="frame" x="-7" y="184" width="82" height="82"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="web" image="home_application_bg"/>
-                    <connections>
-                        <action selector="webButtionAction:" destination="-1" eventType="touchUpInside" id="YqI-Yl-k0h"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_application_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-s7-JE5">
-                    <rect key="frame" x="11" y="193" width="48" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_caq_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xPI-x4-PdE">
-                    <rect key="frame" x="10" y="82" width="49" height="46"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_car" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-8b-Rec">
-                    <rect key="frame" x="90" y="33" width="612" height="252"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_engine" translatesAutoresizingMaskIntoConstraints="NO" id="bzX-eB-RoA">
-                    <rect key="frame" x="122" y="87" width="123" height="127"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-mG-zMd">
-                    <rect key="frame" x="264" y="108" width="55" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="VHA_warning"/>
-                    <connections>
-                        <action selector="steerAlertAction:" destination="-1" eventType="touchUpInside" id="wNu-nr-twH"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78f-7d-dM5">
-                    <rect key="frame" x="608" y="145" width="55" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="VHA_warning"/>
-                    <connections>
-                        <action selector="exhaustAlertAction:" destination="-1" eventType="touchUpInside" id="r8g-2i-GWc"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-4g-ocv">
-                    <rect key="frame" x="567" y="20" width="55" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="VHA_warning"/>
-                    <connections>
-                        <action selector="tireAlertAction:" destination="-1" eventType="touchUpInside" id="O9R-WK-ZxV"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-5C-AWN">
-                    <rect key="frame" x="136" y="196" width="55" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="VHA_warning"/>
-                    <connections>
-                        <action selector="fuelAlertAction:" destination="-1" eventType="touchUpInside" id="I5e-lp-SNu"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Hfj-bJ-AbS">
-                    <rect key="frame" x="468" y="20" width="145" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-FC-82M">
-                    <rect key="frame" x="133" y="233" width="145" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-di-SIg">
-                    <rect key="frame" x="489" y="233" width="145" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYo-0e-88E">
-                    <rect key="frame" x="264" y="293" width="84" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Random" backgroundImage="VHA_call_buttom">
-                        <color key="titleColor" red="0.2666666667" green="0.78823529410000004" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="randomAction:" destination="-1" eventType="touchUpInside" id="1VX-yU-t6e"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-md-peq">
-                    <rect key="frame" x="698" y="275" width="84" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="call dealer" backgroundImage="VHA_call_buttom">
-                        <color key="titleColor" red="0.26666666666666666" green="0.78823529411764703" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="callDealerAction:" destination="-1" eventType="touchUpInside" id="HcE-6F-Pyd"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDa-N8-3lI">
-                    <rect key="frame" x="163" y="108" width="55" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="VHA_warning"/>
-                    <connections>
-                        <action selector="engineAlertAction:" destination="-1" eventType="touchUpInside" id="VV0-ZJ-DEa"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_light" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-mr-A9u">
-                    <rect key="frame" x="78" y="196" width="113" height="89"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-Hq-wZA">
-                    <rect key="frame" x="136" y="20" width="145" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-WT-hW5">
-                    <rect key="frame" x="11" y="289" width="93" height="39"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Alert" backgroundImage="VHA_Alert_buttom">
-                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="alertButtonAction:" destination="-1" eventType="touchUpInside" id="aK1-im-vog"/>
-                    </connections>
-                </button>
-                <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kP2-3b-eCG">
-                    <rect key="frame" x="275" y="86" width="238" height="114"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv8-t6-S61">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkI-AR-qHr">
-                            <rect key="frame" x="138" y="57" width="88" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="否 "/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
+                            <rect key="frame" x="0.0" y="70" width="88" height="94.5"/>
+                            <state key="normal" image="home_caq_icon"/>
                             <connections>
-                                <action selector="alertActionNo:" destination="-1" eventType="touchUpInside" id="Joc-qv-Z9Y"/>
+                                <action selector="caqButtonAction:" destination="-1" eventType="touchUpInside" id="bzj-CJ-uCl"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="是否到就近维修店进行维修" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-FN-x2P">
-                            <rect key="frame" x="18" y="19" width="208" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4i-wl-qaH">
-                            <rect key="frame" x="18" y="57" width="82" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="是"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-WT-hW5">
+                            <rect key="frame" x="10" y="320" width="100.5" height="45"/>
+                            <state key="normal" title="Alert" backgroundImage="VHA_Alert_buttom">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
-                                <action selector="alertActionYes:" destination="-1" eventType="touchUpInside" id="DyX-BU-Qz6"/>
+                                <action selector="alertButtonAction:" destination="-1" eventType="touchUpInside" id="aK1-im-vog"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYo-0e-88E">
+                            <rect key="frame" x="180.5" y="320" width="100.5" height="45"/>
+                            <state key="normal" title="Random" backgroundImage="VHA_call_buttom">
+                                <color key="titleColor" red="0.2666666667" green="0.78823529410000004" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="randomAction:" destination="-1" eventType="touchUpInside" id="1VX-yU-t6e"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
+                            <rect key="frame" x="0.0" y="174.5" width="88" height="93.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" image="home_application_bg"/>
+                            <connections>
+                                <action selector="webButtionAction:" destination="-1" eventType="touchUpInside" id="YqI-Yl-k0h"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_application_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-s7-JE5">
+                            <rect key="frame" x="16" y="186" width="56" height="56"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_car" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-8b-Rec">
+                            <rect key="frame" x="120" y="8" width="527" height="302.5"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_light" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-mr-A9u">
+                            <rect key="frame" x="100" y="195" width="106" height="119"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_engine" translatesAutoresizingMaskIntoConstraints="NO" id="bzX-eB-RoA">
+                            <rect key="frame" x="139" y="75" width="105.5" height="137"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-Hq-wZA">
+                            <rect key="frame" x="145.5" y="-7" width="132" height="61"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Hfj-bJ-AbS">
+                            <rect key="frame" x="471" y="-7" width="132.5" height="61"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-di-SIg">
+                            <rect key="frame" x="471" y="264" width="132.5" height="61.5"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-FC-82M">
+                            <rect key="frame" x="145.5" y="264" width="132" height="61.5"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-4g-ocv">
+                            <rect key="frame" x="513.5" y="41.5" width="46.5" height="46.5"/>
+                            <state key="normal" image="VHA_warning"/>
+                            <connections>
+                                <action selector="tireAlertAction:" destination="-1" eventType="touchUpInside" id="O9R-WK-ZxV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-mG-zMd">
+                            <rect key="frame" x="245.5" y="104" width="47" height="47"/>
+                            <state key="normal" image="VHA_warning"/>
+                            <connections>
+                                <action selector="steerAlertAction:" destination="-1" eventType="touchUpInside" id="wNu-nr-twH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDa-N8-3lI">
+                            <rect key="frame" x="130" y="136" width="46.5" height="47"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="height" multiplier="1:1" id="z2j-5J-yiw"/>
+                            </constraints>
+                            <state key="normal" image="VHA_warning"/>
+                            <connections>
+                                <action selector="engineAlertAction:" destination="-1" eventType="touchUpInside" id="VV0-ZJ-DEa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-md-peq">
+                            <rect key="frame" x="516.5" y="320" width="100.5" height="45"/>
+                            <state key="normal" title="call dealer" backgroundImage="VHA_call_buttom">
+                                <color key="titleColor" red="0.26666666666666666" green="0.78823529411764703" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="callDealerAction:" destination="-1" eventType="touchUpInside" id="HcE-6F-Pyd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-5C-AWN">
+                            <rect key="frame" x="168.5" y="231.5" width="47.5" height="47"/>
+                            <state key="normal" image="VHA_warning"/>
+                            <connections>
+                                <action selector="fuelAlertAction:" destination="-1" eventType="touchUpInside" id="I5e-lp-SNu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78f-7d-dM5">
+                            <rect key="frame" x="590.5" y="151.5" width="46.5" height="47.5"/>
+                            <state key="normal" image="VHA_warning"/>
+                            <connections>
+                                <action selector="exhaustAlertAction:" destination="-1" eventType="touchUpInside" id="r8g-2i-GWc"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="78f-7d-dM5" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="0iz-MI-ybh"/>
+                        <constraint firstItem="fVS-WT-hW5" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" constant="10" id="0j5-Z2-7fS"/>
+                        <constraint firstItem="Kru-di-SIg" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="1.4" id="0pZ-CK-3Y7"/>
+                        <constraint firstItem="Hfj-bJ-AbS" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.25" id="2f1-qk-wVW"/>
+                        <constraint firstAttribute="bottom" secondItem="EYo-0e-88E" secondAttribute="bottom" constant="10" id="3BI-wl-Ey4"/>
+                        <constraint firstAttribute="bottom" secondItem="VdW-md-peq" secondAttribute="bottom" constant="10" id="3Ri-5A-K1I"/>
+                        <constraint firstItem="V4T-mr-A9u" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.4" id="3qE-Rj-DQu"/>
+                        <constraint firstItem="ZmC-4g-ocv" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="1.4" id="4Jj-Nb-Ij7"/>
+                        <constraint firstItem="Hfj-bJ-AbS" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.2" id="6s3-PL-DWx"/>
+                        <constraint firstItem="Dnt-5C-AWN" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="72S-5u-DyE"/>
+                        <constraint firstItem="ph5-Hq-wZA" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.15" id="7JZ-Aj-if1"/>
+                        <constraint firstItem="ZmC-4g-ocv" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="7nk-vw-ELT"/>
+                        <constraint firstItem="bzX-eB-RoA" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.9" id="8f9-xS-Mcw"/>
+                        <constraint firstItem="UDa-N8-3lI" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" id="9Hf-4k-XCr"/>
+                        <constraint firstItem="V4T-mr-A9u" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.39" id="9lx-So-Wr6"/>
+                        <constraint firstItem="Dnt-5C-AWN" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="ANQ-ID-nw1"/>
+                        <constraint firstItem="bzX-eB-RoA" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.2" id="B3N-b6-QUF"/>
+                        <constraint firstItem="NHC-Px-xXV" firstAttribute="top" secondItem="cIH-4V-CdG" secondAttribute="bottom" constant="10" id="BUn-Q7-a8i"/>
+                        <constraint firstItem="V4T-mr-A9u" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.2" id="C8l-ye-oe4"/>
+                        <constraint firstItem="ph5-Hq-wZA" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.55" id="DWW-xg-xqN"/>
+                        <constraint firstItem="Dnt-5C-AWN" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.5" id="Dhn-Y6-COm"/>
+                        <constraint firstItem="VdW-md-peq" firstAttribute="width" secondItem="EYo-0e-88E" secondAttribute="width" id="FJ7-Bo-5dK"/>
+                        <constraint firstItem="Kru-di-SIg" firstAttribute="width" secondItem="hHx-FC-82M" secondAttribute="width" id="GkB-Za-6pi"/>
+                        <constraint firstItem="hHx-FC-82M" firstAttribute="width" secondItem="ph5-Hq-wZA" secondAttribute="width" id="ICM-Rh-YWS"/>
+                        <constraint firstItem="NHC-Px-xXV" firstAttribute="height" secondItem="cIH-4V-CdG" secondAttribute="height" id="K9K-yG-S0D"/>
+                        <constraint firstItem="hHx-FC-82M" firstAttribute="height" secondItem="ph5-Hq-wZA" secondAttribute="height" id="KSH-hf-FUS"/>
+                        <constraint firstItem="78f-7d-dM5" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="1.6" id="Kbf-rp-TlS"/>
+                        <constraint firstItem="fVS-WT-hW5" firstAttribute="width" secondItem="Vv8-t6-S61" secondAttribute="width" multiplier="0.15" id="MVM-yr-vpz"/>
+                        <constraint firstItem="EYo-0e-88E" firstAttribute="width" secondItem="fVS-WT-hW5" secondAttribute="width" id="P0g-3I-dO6"/>
+                        <constraint firstItem="xjl-mG-zMd" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="P8K-di-4ta"/>
+                        <constraint firstItem="bzX-eB-RoA" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.5" id="PnJ-r9-QgG"/>
+                        <constraint firstItem="cIH-4V-CdG" firstAttribute="top" secondItem="Vv8-t6-S61" secondAttribute="top" constant="70" id="Qg1-R4-3eE"/>
+                        <constraint firstItem="Hfj-bJ-AbS" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.15" id="Tyw-Jj-IUO"/>
+                        <constraint firstItem="xjl-mG-zMd" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.8" id="XBI-kS-R12"/>
+                        <constraint firstItem="fVS-WT-hW5" firstAttribute="height" secondItem="Vv8-t6-S61" secondAttribute="height" multiplier="0.12" id="XlU-Xe-rWA"/>
+                        <constraint firstItem="ph5-Hq-wZA" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.25" id="Y22-0f-0Ki"/>
+                        <constraint firstAttribute="bottom" secondItem="fVS-WT-hW5" secondAttribute="bottom" constant="10" id="YJI-gZ-dkK"/>
+                        <constraint firstItem="ZmC-4g-ocv" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="YYz-ID-pfK"/>
+                        <constraint firstItem="cIH-4V-CdG" firstAttribute="height" secondItem="Vv8-t6-S61" secondAttribute="height" multiplier="0.25" id="Yaz-cK-ogu"/>
+                        <constraint firstItem="hHx-FC-82M" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.85" id="am7-aV-Nai"/>
+                        <constraint firstItem="Kru-di-SIg" firstAttribute="height" secondItem="hHx-FC-82M" secondAttribute="height" id="asY-pV-JD4"/>
+                        <constraint firstItem="bzX-eB-RoA" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.45" id="deC-1U-fGq"/>
+                        <constraint firstItem="Hfj-bJ-AbS" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="1.4" id="f1y-3g-Ade"/>
+                        <constraint firstItem="cIH-4V-CdG" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" id="fGA-cx-hti"/>
+                        <constraint firstItem="xjl-mG-zMd" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.7" id="hNp-fM-S3z"/>
+                        <constraint firstItem="78f-7d-dM5" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.1" id="hOi-Y6-VN6"/>
+                        <constraint firstItem="EYo-0e-88E" firstAttribute="height" secondItem="fVS-WT-hW5" secondAttribute="height" id="hYe-e3-5j3"/>
+                        <constraint firstItem="UDa-N8-3lI" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.09" id="hfg-gA-HSO"/>
+                        <constraint firstItem="78f-7d-dM5" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="hmT-NA-WdE"/>
+                        <constraint firstItem="ZmC-4g-ocv" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.4" id="hxI-wj-B9t"/>
+                        <constraint firstItem="fVS-WT-hW5" firstAttribute="top" secondItem="2e7-8b-Rec" secondAttribute="bottom" constant="10" id="iYf-xR-hqI"/>
+                        <constraint firstItem="ae5-s7-JE5" firstAttribute="centerX" secondItem="NHC-Px-xXV" secondAttribute="centerX" id="iem-8z-iFa"/>
+                        <constraint firstAttribute="trailing" secondItem="2e7-8b-Rec" secondAttribute="trailing" constant="20" id="jD5-zS-guK"/>
+                        <constraint firstItem="V4T-mr-A9u" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.6" id="jiX-Kb-HjE"/>
+                        <constraint firstItem="hHx-FC-82M" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.55" id="koA-RF-066"/>
+                        <constraint firstAttribute="trailing" secondItem="VdW-md-peq" secondAttribute="trailing" constant="50" id="lPo-0T-B7r"/>
+                        <constraint firstItem="UDa-N8-3lI" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.4" id="mVa-Dz-2Ud"/>
+                        <constraint firstItem="xjl-mG-zMd" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="nCg-FE-wwT"/>
+                        <constraint firstItem="ph5-Hq-wZA" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.2" id="naa-Ta-Iru"/>
+                        <constraint firstItem="ae5-s7-JE5" firstAttribute="centerY" secondItem="NHC-Px-xXV" secondAttribute="centerY" multiplier="0.97" id="sDz-gH-O1E"/>
+                        <constraint firstItem="Dnt-5C-AWN" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.6" id="sJi-Ia-mmh"/>
+                        <constraint firstItem="NHC-Px-xXV" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" id="vFC-xT-Kif"/>
+                        <constraint firstItem="EYo-0e-88E" firstAttribute="leading" secondItem="fVS-WT-hW5" secondAttribute="trailing" constant="70" id="x5N-8e-F93"/>
+                        <constraint firstItem="2e7-8b-Rec" firstAttribute="top" secondItem="Vv8-t6-S61" secondAttribute="top" constant="8" id="xta-Sm-ygW"/>
+                        <constraint firstItem="2e7-8b-Rec" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" constant="120" id="y3q-cS-bFW"/>
+                        <constraint firstItem="VdW-md-peq" firstAttribute="height" secondItem="EYo-0e-88E" secondAttribute="height" id="yCw-oT-uHA"/>
+                        <constraint firstItem="Kru-di-SIg" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.85" id="zEw-6f-6LC"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vv8-t6-S61" secondAttribute="bottom" id="0Ga-Pb-zwk"/>
+                <constraint firstItem="Vv8-t6-S61" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3aF-vv-MlE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vv8-t6-S61" secondAttribute="trailing" id="eCu-05-fbV"/>
+                <constraint firstItem="Vv8-t6-S61" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fpe-NF-f6x"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="56" y="-424"/>
+            <point key="canvasLocation" x="403" y="-397.5"/>
         </view>
     </objects>
     <resources>
@@ -203,7 +235,6 @@
         <image name="VHA_warning" width="23" height="23"/>
         <image name="home_application_bg" width="88" height="88"/>
         <image name="home_application_icon" width="56" height="56"/>
-        <image name="home_caq_bg" width="88" height="88"/>
-        <image name="home_caq_icon" width="56" height="56"/>
+        <image name="home_caq_icon" width="88" height="88"/>
     </resources>
 </document>

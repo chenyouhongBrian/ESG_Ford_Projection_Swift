@@ -37,6 +37,8 @@ class VCTest: UIViewController {
     var firstExteriorGreater = true
     var firstCabinGreater = true
     
+    var testView: UIView? = UIView()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initSpeechSynth()
@@ -45,6 +47,8 @@ class VCTest: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(testView!)
+        testView!.tag = 5000
         setUpView()
         PMChangingTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.refreshPMValue()
@@ -94,7 +98,12 @@ class VCTest: UIViewController {
             exteriorPMValue -= 10
         }
         
-        setUpPMView()
+        if let testView = testView {
+            if !testView.isHidden {
+                setUpPMView()
+            }
+        }
+        
     }
     
     func setUpPMView() {
@@ -170,9 +179,10 @@ class VCTest: UIViewController {
         let window = UIApplication.shared.keyWindow
         let windowView = window?.rootViewController?.view
         let vhaView = windowView?.viewWithTag(2000)
-        let webView = windowView?.viewWithTag(3000)
         vhaView?.isHidden = false
-        webView?.isHidden = true
+        if let viewTag = testView {
+            viewTag.isHidden = true
+        }
     }
     
     

@@ -337,7 +337,7 @@ class YHAlertView : UIView{
         return button
     }
     
-    private func _remove(){
+     func _remove(){
         
             switch animationOption {
                 case .none:
@@ -401,6 +401,8 @@ class YHAlertView : UIView{
         _remove()
 
     }
+    
+    
 
     @objc func _clickCancel(sender:UIButton){
 

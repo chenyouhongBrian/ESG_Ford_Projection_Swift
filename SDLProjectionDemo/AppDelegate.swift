@@ -55,8 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProxyManagerDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        let manager = ProxyManager.sharedInstance
-        manager.delegate = self
+      //  let manager = ProxyManager.sharedInstance
+      //  manager.delegate = self
        
         print("11-------------------------------------didFinishLaunchingWithOptions)");
         

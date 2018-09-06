@@ -10,6 +10,9 @@ import UIKit
 
 class MapViewController: UIViewController,IFlySpeechSynthesizerDelegate {
     
+   public var speakText : String = ""
+    
+    
     //语音
     var iFlySpeechSynthesizer: IFlySpeechSynthesizer?
     
@@ -21,22 +24,22 @@ class MapViewController: UIViewController,IFlySpeechSynthesizerDelegate {
         iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
         iFlySpeechSynthesizer?.delegate = self
         //设置合成参数
-        //设置在线工作方式
-        // iFlySpeechSynthesizer?.setParameter(IFlySpeechConstant.type_CLOUD(), forKey: IFlySpeechConstant.engine_TYPE())
-        iFlySpeechSynthesizer?.setParameter(IFlySpeechConstant.type_CLOUD()!, forKey: IFlySpeechConstant.engine_TYPE()!)
-        //设置音量，取值范围 0~100
-        let voice = "50"
-        iFlySpeechSynthesizer?.setParameter(voice, forKey: IFlySpeechConstant.volume()!)
-        //发音人，默认为”xiaoyan”，可以设置的参数列表可参考“合成发音人列表”
-        let people = "xiaoyan"
-        iFlySpeechSynthesizer?.setParameter(people, forKey: IFlySpeechConstant.voice_NAME()!)
-        //保存合成文件名，如不再需要，设置为nil或者为空表示取消，默认目录位于library/cache下
-        let format = "tts.pcm"
-        iFlySpeechSynthesizer?.setParameter(format, forKey: IFlySpeechConstant.tts_AUDIO_PATH()!)
+//        //设置在线工作方式
+//        // iFlySpeechSynthesizer?.setParameter(IFlySpeechConstant.type_CLOUD(), forKey: IFlySpeechConstant.engine_TYPE())
+//        iFlySpeechSynthesizer?.setParameter(IFlySpeechConstant.type_CLOUD()!, forKey: IFlySpeechConstant.engine_TYPE()!)
+//        //设置音量，取值范围 0~100
+//        let voice = "50"
+//        iFlySpeechSynthesizer?.setParameter(voice, forKey: IFlySpeechConstant.volume()!)
+//        //发音人，默认为”xiaoyan”，可以设置的参数列表可参考“合成发音人列表”
+//        let people = "xiaoyan"
+//        iFlySpeechSynthesizer?.setParameter(people, forKey: IFlySpeechConstant.voice_NAME()!)
+//        //保存合成文件名，如不再需要，设置为nil或者为空表示取消，默认目录位于library/cache下
+//        let format = "tts.pcm"
+//        iFlySpeechSynthesizer?.setParameter(format, forKey: IFlySpeechConstant.tts_AUDIO_PATH()!)
         
     //        //启动合成会话
     //        let text = "高德地图为你导航到最近维修地点"
-    //        iFlySpeechSynthesizer?.startSpeaking(text)
+            iFlySpeechSynthesizer?.startSpeaking(speakText)
         
     }
     
