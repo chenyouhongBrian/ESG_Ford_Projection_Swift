@@ -63,21 +63,18 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
-                            <rect key="frame" x="0.0" y="174.5" width="88" height="93.5"/>
+                            <rect key="frame" x="0.0" y="174.5" width="88" height="94.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" image="home_application_bg"/>
+                            <state key="normal" image="home_VHA_reproduction"/>
                             <connections>
                                 <action selector="webButtionAction:" destination="-1" eventType="touchUpInside" id="YqI-Yl-k0h"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_application_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-s7-JE5">
-                            <rect key="frame" x="16" y="186" width="56" height="56"/>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_car" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-8b-Rec">
                             <rect key="frame" x="120" y="8" width="527" height="302.5"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_light" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-mr-A9u">
-                            <rect key="frame" x="100" y="195" width="106" height="119"/>
+                            <rect key="frame" x="100" y="195.5" width="106" height="118"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_engine" translatesAutoresizingMaskIntoConstraints="NO" id="bzX-eB-RoA">
                             <rect key="frame" x="139" y="75" width="105.5" height="137"/>
@@ -95,7 +92,7 @@
                             <rect key="frame" x="145.5" y="264" width="132" height="61.5"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-4g-ocv">
-                            <rect key="frame" x="513.5" y="41.5" width="46.5" height="46.5"/>
+                            <rect key="frame" x="513.5" y="40.5" width="46.5" height="46.5"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="tireAlertAction:" destination="-1" eventType="touchUpInside" id="O9R-WK-ZxV"/>
@@ -128,7 +125,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-5C-AWN">
-                            <rect key="frame" x="168.5" y="231.5" width="47.5" height="47"/>
+                            <rect key="frame" x="169" y="231.5" width="46.5" height="47"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="fuelAlertAction:" destination="-1" eventType="touchUpInside" id="I5e-lp-SNu"/>
@@ -195,7 +192,6 @@
                         <constraint firstItem="78f-7d-dM5" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="hmT-NA-WdE"/>
                         <constraint firstItem="ZmC-4g-ocv" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.4" id="hxI-wj-B9t"/>
                         <constraint firstItem="fVS-WT-hW5" firstAttribute="top" secondItem="2e7-8b-Rec" secondAttribute="bottom" constant="10" id="iYf-xR-hqI"/>
-                        <constraint firstItem="ae5-s7-JE5" firstAttribute="centerX" secondItem="NHC-Px-xXV" secondAttribute="centerX" id="iem-8z-iFa"/>
                         <constraint firstAttribute="trailing" secondItem="2e7-8b-Rec" secondAttribute="trailing" constant="20" id="jD5-zS-guK"/>
                         <constraint firstItem="V4T-mr-A9u" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.6" id="jiX-Kb-HjE"/>
                         <constraint firstItem="hHx-FC-82M" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.55" id="koA-RF-066"/>
@@ -203,7 +199,6 @@
                         <constraint firstItem="UDa-N8-3lI" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.4" id="mVa-Dz-2Ud"/>
                         <constraint firstItem="xjl-mG-zMd" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="nCg-FE-wwT"/>
                         <constraint firstItem="ph5-Hq-wZA" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.2" id="naa-Ta-Iru"/>
-                        <constraint firstItem="ae5-s7-JE5" firstAttribute="centerY" secondItem="NHC-Px-xXV" secondAttribute="centerY" multiplier="0.97" id="sDz-gH-O1E"/>
                         <constraint firstItem="Dnt-5C-AWN" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.6" id="sJi-Ia-mmh"/>
                         <constraint firstItem="NHC-Px-xXV" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" id="vFC-xT-Kif"/>
                         <constraint firstItem="EYo-0e-88E" firstAttribute="leading" secondItem="fVS-WT-hW5" secondAttribute="trailing" constant="70" id="x5N-8e-F93"/>
@@ -233,8 +228,7 @@
         <image name="VHA_vertical_light" width="52" height="45"/>
         <image name="VHA_vertical_tire" width="61" height="37"/>
         <image name="VHA_warning" width="23" height="23"/>
-        <image name="home_application_bg" width="88" height="88"/>
-        <image name="home_application_icon" width="56" height="56"/>
+        <image name="home_VHA_reproduction" width="88" height="88"/>
         <image name="home_caq_icon" width="88" height="88"/>
     </resources>
 </document>

@@ -189,12 +189,12 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     }
     
     @IBAction func webButtionAction(_ sender: Any) {
-        let window = UIApplication.shared.keyWindow
-        let windowView = window?.rootViewController?.view
-        let vhaView = windowView?.viewWithTag(2000)
-        let webView = windowView?.viewWithTag(3000)
-        vhaView?.isHidden = true
-        webView?.isHidden = false
+//        let window = UIApplication.shared.keyWindow
+//        let windowView = window?.rootViewController?.view
+//        let vhaView = windowView?.viewWithTag(2000)
+//        let webView = windowView?.viewWithTag(3000)
+//        vhaView?.isHidden = true
+//        webView?.isHidden = false
     }
     
     @IBAction func alertButtonAction(_ sender: Any) {
