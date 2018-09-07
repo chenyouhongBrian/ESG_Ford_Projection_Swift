@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -31,21 +31,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv8-t6-S61">
-                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <rect key="frame" x="44" y="0.0" width="724" height="354"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
-                            <rect key="frame" x="-5" y="80" width="88" height="94.5"/>
+                            <rect key="frame" x="-5" y="80" width="88" height="89.333333333333314"/>
                             <state key="normal" image="home_VHA_reproduction"/>
                             <connections>
                                 <action selector="caqButtonAction:" destination="-1" eventType="touchUpInside" id="bzj-CJ-uCl"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-WT-hW5">
-                            <rect key="frame" x="10" y="320" width="100.5" height="45"/>
+                            <rect key="frame" x="10" y="301.66666666666669" width="109" height="42.333333333333314"/>
                             <state key="normal" title="Alert" backgroundImage="VHA_Alert_buttom">
                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -54,7 +54,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYo-0e-88E">
-                            <rect key="frame" x="180.5" y="320" width="100.5" height="45"/>
+                            <rect key="frame" x="189" y="301.66666666666669" width="109" height="42.333333333333314"/>
                             <state key="normal" title="Random" backgroundImage="VHA_call_buttom">
                                 <color key="titleColor" red="0.2666666667" green="0.78823529410000004" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -63,7 +63,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
-                            <rect key="frame" x="-5" y="204.5" width="88" height="94.5"/>
+                            <rect key="frame" x="-5" y="199.33333333333334" width="88" height="89.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" image="home_caq_icon"/>
                             <connections>
@@ -71,42 +71,42 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_car" translatesAutoresizingMaskIntoConstraints="NO" id="2e7-8b-Rec">
-                            <rect key="frame" x="120" y="8" width="527" height="302.5"/>
+                            <rect key="frame" x="120" y="8" width="584" height="284"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_light" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-mr-A9u">
-                            <rect key="frame" x="100" y="195.5" width="106" height="118"/>
+                            <rect key="frame" x="105.66666666666666" y="184.33333333333334" width="117.33333333333334" height="111.00000000000003"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_engine" translatesAutoresizingMaskIntoConstraints="NO" id="bzX-eB-RoA">
-                            <rect key="frame" x="139" y="75" width="105.5" height="137"/>
+                            <rect key="frame" x="147.66666666666666" y="71.333333333333314" width="116.66666666666666" height="127.66666666666669"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-Hq-wZA">
-                            <rect key="frame" x="145.5" y="-7" width="132" height="61"/>
+                            <rect key="frame" x="154" y="-6.6666666666666679" width="146.33333333333337" height="57.333333333333343"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Hfj-bJ-AbS">
-                            <rect key="frame" x="471" y="-7" width="132.5" height="61"/>
+                            <rect key="frame" x="503.66666666666663" y="-6.6666666666666679" width="147" height="57.333333333333343"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-di-SIg">
-                            <rect key="frame" x="471" y="264" width="132.5" height="61.5"/>
+                            <rect key="frame" x="503.66666666666663" y="248.66666666666663" width="147" height="58"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VHA_vertical_tire" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-FC-82M">
-                            <rect key="frame" x="145.5" y="264" width="132" height="61.5"/>
+                            <rect key="frame" x="154" y="248.66666666666663" width="146.33333333333337" height="58"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-4g-ocv">
-                            <rect key="frame" x="513.5" y="40.5" width="46.5" height="46.5"/>
+                            <rect key="frame" x="551" y="34" width="51.333333333333371" height="51.666666666666657"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="tireAlertAction:" destination="-1" eventType="touchUpInside" id="O9R-WK-ZxV"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-mG-zMd">
-                            <rect key="frame" x="245.5" y="104" width="47" height="47"/>
+                            <rect key="frame" x="262.66666666666669" y="94.333333333333314" width="52.333333333333314" height="51.999999999999986"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="steerAlertAction:" destination="-1" eventType="touchUpInside" id="wNu-nr-twH"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDa-N8-3lI">
-                            <rect key="frame" x="130" y="136" width="46.5" height="47"/>
+                            <rect key="frame" x="138.66666666666666" y="124" width="52" height="52.333333333333329"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="height" multiplier="1:1" id="z2j-5J-yiw"/>
                             </constraints>
@@ -116,7 +116,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-md-peq">
-                            <rect key="frame" x="516.5" y="320" width="100.5" height="45"/>
+                            <rect key="frame" x="565" y="301.66666666666669" width="109" height="42.333333333333314"/>
                             <state key="normal" title="call dealer" backgroundImage="VHA_call_buttom">
                                 <color key="titleColor" red="0.26666666666666666" green="0.78823529411764703" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -125,14 +125,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-5C-AWN">
-                            <rect key="frame" x="169" y="231.5" width="46.5" height="47"/>
+                            <rect key="frame" x="180.66666666666666" y="214" width="51.666666666666657" height="52.333333333333314"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="fuelAlertAction:" destination="-1" eventType="touchUpInside" id="I5e-lp-SNu"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78f-7d-dM5">
-                            <rect key="frame" x="590.5" y="151.5" width="46.5" height="47.5"/>
+                            <rect key="frame" x="633.33333333333337" y="138.66666666666666" width="52" height="52.666666666666657"/>
                             <state key="normal" image="VHA_warning"/>
                             <connections>
                                 <action selector="exhaustAlertAction:" destination="-1" eventType="touchUpInside" id="r8g-2i-GWc"/>

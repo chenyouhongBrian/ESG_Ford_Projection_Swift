@@ -112,8 +112,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         //获取语音合成单例
         iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
          iFlySpeechSynthesizer?.delegate = self
-        
-        
     }
     
     func setUpVHAProjectionViewByArray(_ array: Array<String>)  {
@@ -174,8 +172,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     }
     
     @IBAction func caqButtonAction(_ sender: Any) {
-        //self.dismiss(animated: false, completion: nil)
-        // self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
    
     }
     
@@ -186,6 +182,9 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
 //        let webView = windowView?.viewWithTag(3000)
 //        vhaView?.isHidden = true
 //        webView?.isHidden = false
+        
+        //停止语音识别
+        iFlySpeechRecognizer?.destroy()
         
         let window = UIApplication.shared.keyWindow
         let windowView = window?.rootViewController?.view
@@ -203,22 +202,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         
         print("randomArray ---- \(randomArray)")
         var titleArray : Array<String> = []
-//        if engineArray.count > 0{
-//            titleArray.append(engineArray)
-//        }
-//        if engineArray.count > 0{
-//            titleArray.append(engineArray)
-//        }
-//        if engineArray.count > 0{
-//            titleArray.append(engineArray)
-//        }
-//        if engineArray.count > 0{
-//            titleArray.append(engineArray)
-//        }
-//        if engineArray.count > 0{
-//            titleArray.append(engineArray)
-//        }
-//
            self.setScrollViewByArray(detailArray: randomArray)
     }
    
@@ -260,25 +243,20 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
 //        self.present(alertController!, animated: true, completion: nil)
     }
  
+    
+//不去附近汽车维修店
    @objc func cancelAction() {
  //       alertController?.dismiss(animated: true, completion: nil)
-        //停止语音识别
-//        iFlySpeechRecognizer?.cancel()
- //       iFlySpeechRecognizer?.stopListening()
-//         iFlySpeechRecognizer = nil
         detailScrollView.removeFromSuperview()
+        //停止语音识别
         iFlySpeechRecognizer?.destroy()
     }
-    
+
+//不去附近汽车维修店
    @objc func okAction() {
     detailScrollView.removeFromSuperview()
-       
- //        iFlySpeechRecognizer = nil
         //停止语音识别
-//        self.iFlySpeechRecognizer?.cancel()
-//        self.iFlySpeechRecognizer?.stopListening()
         iFlySpeechRecognizer?.destroy()
-        
  //       alertController?.dismiss(animated: true, completion: nil)
         
         whichSentence = "2级"
@@ -288,23 +266,21 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         
         let text = "就近维修店有两家，请选择数字 \(text1) \(text2)"
         iFlySpeechSynthesizer?.startSpeaking(text)
-        
-        
-        
+    
         YHAlertView.show(title: "就近维修店有两家", message: "请选择", cancelButtonTitle: "取消", otherButtonTitles:text1,text2) { (alertV:YHAlertView, index:Int) in
             print("点击下标是:\(index)")
             
-//            //停止录音
-//            self.iFlySpeechRecognizer?.cancel()
-//            self.iFlySpeechRecognizer?.stopListening()
-            
-            
             switch index{
+            //取消
+            case 0:
+                //停止语音识别
+                self.iFlySpeechRecognizer?.destroy()
+                break
             case 1:
                 //启动合成会话
                 let text = "高德地图为你导航到东昌路19号"
-               // self.iFlySpeechSynthesizer?.startSpeaking(text)
-               self.iFlySpeechRecognizer?.destroy()
+                 //停止语音识别
+                self.iFlySpeechRecognizer?.destroy()
                 let mapVC = MapViewController.init(nibName: "MapViewController", bundle: nil)
                 mapVC.speakText = text
                 self.present(mapVC, animated: true, completion: nil)
@@ -313,7 +289,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             case 2:
                 //启动合成会话
                 let text = "高德地图为你导航到陆家嘴22号"
-                //self.iFlySpeechSynthesizer?.startSpeaking(text)
                self.iFlySpeechRecognizer?.destroy()
                 let mapVC = MapViewController.init(nibName: "MapViewController", bundle: nil)
                  mapVC.speakText = text
@@ -338,22 +313,16 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             for view:UIView in detailScrollView.subviews{
                 view.removeFromSuperview()
             }
-   //         iFlySpeechRecognizer = nil
+
             whichSentence = "1级"
-//            //停止语音识别
-//            iFlySpeechRecognizer?.cancel()
-//            iFlySpeechRecognizer?.stopListening()
+            //停止语音识别
             iFlySpeechRecognizer?.destroy()
-            //获取语音合成单例
-//            iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
-//            iFlySpeechSynthesizer?.delegate = self
+ 
             //启动合成会话
             iFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
              iFlySpeechSynthesizer?.delegate = self
             let text = "汽车故障提示，是否到就近维修店进行维修"
             iFlySpeechSynthesizer!.startSpeaking(text)
-            
-           // self.initRecognizer()
             
             let warningView : UIView = UIView.init(frame: CGRect(x: 20, y: 5, width: ScreenWidth - 40, height: 100))
             warningView.backgroundColor = UIColor.black
@@ -414,26 +383,18 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     
     @IBAction func fuelAlertAction(_ sender: Any) {
         self.setScrollViewByArray(detailArray: fuelArray)
-        
-        
     }
     
     @IBAction func steerAlertAction(_ sender: Any) {
-        
          self.setScrollViewByArray(detailArray: steerArray)
-        
     }
     
     @IBAction func tireAlertAction(_ sender: Any) {
-        
-         self.setScrollViewByArray(detailArray: tireArray)
-        
+        self.setScrollViewByArray(detailArray: tireArray)
     }
     
     @IBAction func exhaustAlertAction(_ sender: Any) {
-     
         self.setScrollViewByArray(detailArray: exhaustArray)
-        
     }
     
     override var shouldAutorotate:Bool{
@@ -511,12 +472,12 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
      // params例如：
    // {"sn":1,"ls":true,"bg":0,"ed":0,"ws":[{"bg":0,"cw":[{"w":"白日","sc":0}]},{"bg":0,"cw":[{"w":"依山","sc":0}]},{"bg":0,"cw":[{"w":"尽","sc":0}]},{"bg":0,"cw":[{"w":"黄河入海流","sc":0}]},{"bg":0,"cw":[{"w":"。","sc":0}]}]}
    
-    func stringFromJson(params : NSString?) -> NSString? {
-        if (params?.length)! == 0 {
+    func stringFromJson(params : String?) -> String? {
+        if (params?.lengthOfBytes(using: String.Encoding.utf8)) == 0 {
             return nil
         }
-        var tempStr = NSMutableString.init()
-        let paramData = params?.data(using: String.Encoding.utf8.rawValue) //String.Encoding.utf8.rawValue
+        var tempStr : String = ""
+        let paramData = params?.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) //String.Encoding.utf8.rawValue
         let  resultJson = try? JSONSerialization.jsonObject(with: paramData!, options: [])
         let resultDic = resultJson as! NSDictionary
         
@@ -592,11 +553,8 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             return
         }
 
-        let a = "qqq"
         
-        let b = "aa" + a
-        
-        var resultString = NSMutableString.init()
+        var resultString : String = ""
         var dic = NSDictionary.init()
         dic = results[0] as! NSDictionary
 
@@ -608,7 +566,7 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         
          let resultFromJson = self.stringFromJson(params: resultString)
          let code = resultFromJson?.lowercased
-        print("resultFromJson__ = \(String(describing: resultFromJson))")
+       // print("resultFromJson__ = \(String(describing: resultFromJson))")
        // print("resultFromJson__------ = \(String(describing: resultFromJson))")
         print("code__----------- = \(String(describing: code))")
     
@@ -630,25 +588,17 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             if (resultFromJson?.contains("一"))! || (resultFromJson?.contains("以"))! || (resultFromJson?.contains("衣"))! || (resultFromJson?.contains("医"))! || (resultFromJson?.contains("伊"))!{
                 
                 //停止语音识别
-//                iFlySpeechRecognizer = IFlySpeechRecognizer.sharedInstance()
-//                iFlySpeechRecognizer?.cancel()
-//                iFlySpeechRecognizer?.stopListening()
                 iFlySpeechRecognizer?.destroy()
-//                iFlySpeechRecognizer = nil
-                
- //               iFlySpeechRecognizer?.destroy()
+
                 //启动合成会话
                 let text = "高德地图为你导航到东昌路19号"
-                // self.iFlySpeechSynthesizer?.startSpeaking(text)
-                
+    
                 for view:UIView in  (UIApplication.shared.keyWindow?.subviews)!{
                     if view.isKind(of: YHAlertView.self) {
                         view.removeFromSuperview()
                     }
                 }
-                
-                
-                
+   
                 let mapVC = MapViewController.init(nibName: "MapViewController", bundle: nil)
                 mapVC.speakText = text
                 self.present(mapVC, animated: true, completion: nil)
@@ -657,17 +607,10 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             
             if (resultFromJson?.contains("二"))! || (resultFromJson?.contains("而"))! || (resultFromJson?.contains("儿"))! || (resultFromJson?.contains("尔"))! || (resultFromJson?.contains("耳"))!{
                 
-//                 iFlySpeechRecognizer = nil
                 //停止语音识别
- //                iFlySpeechRecognizer = IFlySpeechRecognizer.sharedInstance()
-//                iFlySpeechRecognizer?.cancel()
-//                iFlySpeechRecognizer?.stopListening()
-//                self.initRecognizer()
                 iFlySpeechRecognizer?.destroy()
                 //启动合成会话
                 let text = "高德地图为你导航到陆家嘴22号"
-                
-                //self.iFlySpeechSynthesizer?.startSpeaking(text)
                 
                 for view:UIView in  (UIApplication.shared.keyWindow?.subviews)!{
                     if view.isKind(of: YHAlertView.self) {
@@ -677,36 +620,11 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
                 let mapVC = MapViewController.init(nibName: "MapViewController", bundle: nil)
                 mapVC.speakText = text
                 self.present(mapVC, animated: true, completion: nil)
-
                 
             }
         }
-        
-        
-        
     }
-    
-    
-//    func isIncludeChineseYes(string: NSString?) -> Bool {
-////
-//
-//        let chinese = NSString.init()
-//
-////        let code = string?.lowercased
-////        if (string?.contains("u662f"))! {
-////
-////        }
-////
-////        for (_, value) in string.characters.enumerate() {
-////
-////            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
-////                return true
-////            }
-////        }
-////
-////        return false
-//    }
-//
+
     //停止录音回调
     func onEndOfSpeech() {
         
@@ -724,8 +642,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     }
    
 
- 
-    
     
     
 }
