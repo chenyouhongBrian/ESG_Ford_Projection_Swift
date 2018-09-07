@@ -38,8 +38,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-4V-CdG">
-                            <rect key="frame" x="0.0" y="70" width="88" height="94.5"/>
-                            <state key="normal" image="home_caq_icon"/>
+                            <rect key="frame" x="-5" y="80" width="88" height="94.5"/>
+                            <state key="normal" image="home_VHA_reproduction"/>
                             <connections>
                                 <action selector="caqButtonAction:" destination="-1" eventType="touchUpInside" id="bzj-CJ-uCl"/>
                             </connections>
@@ -63,9 +63,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-Px-xXV">
-                            <rect key="frame" x="0.0" y="174.5" width="88" height="94.5"/>
+                            <rect key="frame" x="-5" y="204.5" width="88" height="94.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" image="home_VHA_reproduction"/>
+                            <state key="normal" image="home_caq_icon"/>
                             <connections>
                                 <action selector="webButtionAction:" destination="-1" eventType="touchUpInside" id="YqI-Yl-k0h"/>
                             </connections>
@@ -158,7 +158,7 @@
                         <constraint firstItem="V4T-mr-A9u" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.39" id="9lx-So-Wr6"/>
                         <constraint firstItem="Dnt-5C-AWN" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="ANQ-ID-nw1"/>
                         <constraint firstItem="bzX-eB-RoA" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.2" id="B3N-b6-QUF"/>
-                        <constraint firstItem="NHC-Px-xXV" firstAttribute="top" secondItem="cIH-4V-CdG" secondAttribute="bottom" constant="10" id="BUn-Q7-a8i"/>
+                        <constraint firstItem="NHC-Px-xXV" firstAttribute="top" secondItem="cIH-4V-CdG" secondAttribute="bottom" constant="30" id="BUn-Q7-a8i"/>
                         <constraint firstItem="V4T-mr-A9u" firstAttribute="width" secondItem="2e7-8b-Rec" secondAttribute="width" multiplier="0.2" id="C8l-ye-oe4"/>
                         <constraint firstItem="ph5-Hq-wZA" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.55" id="DWW-xg-xqN"/>
                         <constraint firstItem="Dnt-5C-AWN" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.5" id="Dhn-Y6-COm"/>
@@ -172,7 +172,7 @@
                         <constraint firstItem="EYo-0e-88E" firstAttribute="width" secondItem="fVS-WT-hW5" secondAttribute="width" id="P0g-3I-dO6"/>
                         <constraint firstItem="xjl-mG-zMd" firstAttribute="width" secondItem="UDa-N8-3lI" secondAttribute="width" id="P8K-di-4ta"/>
                         <constraint firstItem="bzX-eB-RoA" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.5" id="PnJ-r9-QgG"/>
-                        <constraint firstItem="cIH-4V-CdG" firstAttribute="top" secondItem="Vv8-t6-S61" secondAttribute="top" constant="70" id="Qg1-R4-3eE"/>
+                        <constraint firstItem="cIH-4V-CdG" firstAttribute="top" secondItem="Vv8-t6-S61" secondAttribute="top" constant="80" id="Qg1-R4-3eE"/>
                         <constraint firstItem="Hfj-bJ-AbS" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.15" id="Tyw-Jj-IUO"/>
                         <constraint firstItem="xjl-mG-zMd" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="0.8" id="XBI-kS-R12"/>
                         <constraint firstItem="fVS-WT-hW5" firstAttribute="height" secondItem="Vv8-t6-S61" secondAttribute="height" multiplier="0.12" id="XlU-Xe-rWA"/>
@@ -184,7 +184,7 @@
                         <constraint firstItem="Kru-di-SIg" firstAttribute="height" secondItem="hHx-FC-82M" secondAttribute="height" id="asY-pV-JD4"/>
                         <constraint firstItem="bzX-eB-RoA" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.45" id="deC-1U-fGq"/>
                         <constraint firstItem="Hfj-bJ-AbS" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="1.4" id="f1y-3g-Ade"/>
-                        <constraint firstItem="cIH-4V-CdG" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" id="fGA-cx-hti"/>
+                        <constraint firstItem="cIH-4V-CdG" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" constant="-5" id="fGA-cx-hti"/>
                         <constraint firstItem="xjl-mG-zMd" firstAttribute="centerX" secondItem="2e7-8b-Rec" secondAttribute="centerX" multiplier="0.7" id="hNp-fM-S3z"/>
                         <constraint firstItem="78f-7d-dM5" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.1" id="hOi-Y6-VN6"/>
                         <constraint firstItem="EYo-0e-88E" firstAttribute="height" secondItem="fVS-WT-hW5" secondAttribute="height" id="hYe-e3-5j3"/>
@@ -200,7 +200,7 @@
                         <constraint firstItem="xjl-mG-zMd" firstAttribute="height" secondItem="UDa-N8-3lI" secondAttribute="height" id="nCg-FE-wwT"/>
                         <constraint firstItem="ph5-Hq-wZA" firstAttribute="height" secondItem="2e7-8b-Rec" secondAttribute="height" multiplier="0.2" id="naa-Ta-Iru"/>
                         <constraint firstItem="Dnt-5C-AWN" firstAttribute="centerY" secondItem="2e7-8b-Rec" secondAttribute="centerY" multiplier="1.6" id="sJi-Ia-mmh"/>
-                        <constraint firstItem="NHC-Px-xXV" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" id="vFC-xT-Kif"/>
+                        <constraint firstItem="NHC-Px-xXV" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" constant="-5" id="vFC-xT-Kif"/>
                         <constraint firstItem="EYo-0e-88E" firstAttribute="leading" secondItem="fVS-WT-hW5" secondAttribute="trailing" constant="70" id="x5N-8e-F93"/>
                         <constraint firstItem="2e7-8b-Rec" firstAttribute="top" secondItem="Vv8-t6-S61" secondAttribute="top" constant="8" id="xta-Sm-ygW"/>
                         <constraint firstItem="2e7-8b-Rec" firstAttribute="leading" secondItem="Vv8-t6-S61" secondAttribute="leading" constant="120" id="y3q-cS-bFW"/>

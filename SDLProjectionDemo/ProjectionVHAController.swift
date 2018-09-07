@@ -176,16 +176,7 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     @IBAction func caqButtonAction(_ sender: Any) {
         //self.dismiss(animated: false, completion: nil)
         // self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
-         let window = UIApplication.shared.keyWindow
-         let windowView = window?.rootViewController?.view
-         let vhaView = windowView?.viewWithTag(2000)
-         let webView = windowView?.viewWithTag(3000)
-         let caqView = windowView?.viewWithTag(1000)
-        
-        let textView = caqView?.viewWithTag(5000)
-        textView?.isHidden = false
-        vhaView?.isHidden = true
-        webView?.isHidden = true
+   
     }
     
     @IBAction func webButtionAction(_ sender: Any) {
@@ -195,6 +186,17 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
 //        let webView = windowView?.viewWithTag(3000)
 //        vhaView?.isHidden = true
 //        webView?.isHidden = false
+        
+        let window = UIApplication.shared.keyWindow
+        let windowView = window?.rootViewController?.view
+        let vhaView = windowView?.viewWithTag(2000)
+        let webView = windowView?.viewWithTag(3000)
+        let caqView = windowView?.viewWithTag(1000)
+        
+        let textView = caqView?.viewWithTag(5000)
+        textView?.isHidden = false
+        vhaView?.isHidden = true
+        webView?.isHidden = true
     }
     
     @IBAction func alertButtonAction(_ sender: Any) {
@@ -256,23 +258,20 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
 //        alertController?.addAction(okAction)
 //
 //        self.present(alertController!, animated: true, completion: nil)
-        
-      
-      
     }
  
-    func cancelAction() {
-        alertController?.dismiss(animated: true, completion: nil)
+   @objc func cancelAction() {
+ //       alertController?.dismiss(animated: true, completion: nil)
         //停止语音识别
 //        iFlySpeechRecognizer?.cancel()
  //       iFlySpeechRecognizer?.stopListening()
 //         iFlySpeechRecognizer = nil
+        detailScrollView.removeFromSuperview()
         iFlySpeechRecognizer?.destroy()
     }
     
-    
-    func okAction() {
-    
+   @objc func okAction() {
+    detailScrollView.removeFromSuperview()
        
  //        iFlySpeechRecognizer = nil
         //停止语音识别
@@ -375,8 +374,8 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
             yesButton.frame = CGRect(x: 550, y: 10, width: 90, height: 90)
             warningView.addSubview(noButton)
             warningView.addSubview(yesButton)
-            noButton.addTarget(self, action: #selector(noAction), for: UIControlEvents.touchUpInside)
-            yesButton.addTarget(self, action: #selector(yesAction), for: UIControlEvents.touchUpInside)
+            noButton.addTarget(self, action: #selector(cancelAction), for: UIControlEvents.touchUpInside)
+            yesButton.addTarget(self, action: #selector(okAction), for: UIControlEvents.touchUpInside)
             
             let lineView : UIView = UIView.init(frame: CGRect(x: 20, y: warningView.bounds.size.height + 1, width: warningView.bounds.size.width - 40, height: 1))
             lineView.backgroundColor = UIColor.init(red: 238/255.0, green: 191/255.0, blue: 45/255.0, alpha: 1)
@@ -412,14 +411,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         }
     }
     
-    @objc func noAction() {
-        detailScrollView.removeFromSuperview()
-    }
-    
-    @objc func yesAction() {
-        detailScrollView.removeFromSuperview()
-        self.okAction()
-    }
     
     @IBAction func fuelAlertAction(_ sender: Any) {
         self.setScrollViewByArray(detailArray: fuelArray)
@@ -531,13 +522,13 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         
         //JSONSerialization.ReadingOptions
         //as! NSDictionary
-        print("resultDic_______ == \(resultDic)")
+        //print("resultDic_______ == \(resultDic)")
         
         if resultDic.count > 0 {
             var wordArray = NSArray.init()
             wordArray = resultDic.object(forKey:"ws") as! NSArray
             
-            print("word_______ == \(wordArray)")
+           // print("word_______ == \(wordArray)")
             
             for (index,_) in wordArray.enumerated() {
                 let wsDic = wordArray.object(at: index) as! NSDictionary
@@ -552,33 +543,6 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         }
         return tempStr
     }
-
-//    - (NSString *)stringFromJson:(NSString*)params
-//    {
-//    if (params == NULL) {
-//    return nil;
-//    }
-//
-//    NSMutableString *tempStr = [[NSMutableString alloc] init];
-//    NSDictionary *resultDic  = [NSJSONSerialization JSONObjectWithData:    //返回的格式必须为utf8的,否则发生未知错误
-//    [params dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
-//
-//    if (resultDic!= nil) {
-//    NSArray *wordArray = [resultDic objectForKey:@"ws"];
-//
-//    for (int i = 0; i < [wordArray count]; i++) {
-//    NSDictionary *wsDic = [wordArray objectAtIndex: i];
-//    NSArray *cwArray = [wsDic objectForKey:@"cw"];
-//
-//    for (int j = 0; j < [cwArray count]; j++) {
-//    NSDictionary *wDic = [cwArray objectAtIndex:j];
-//    NSString *str = [wDic objectForKey:@"w"];
-//    [tempStr appendString: str];
-//    }
-//    }
-//    }
-//    return tempStr;
-//    }
 
 //IFlySpeechSynthesizerDelegate
     //合成开始
@@ -650,11 +614,12 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
     
         if (whichSentence == "1级") {
             if (resultFromJson?.contains("试"))! || (resultFromJson?.contains("是"))! || (resultFromJson?.contains("时"))! || (resultFromJson?.contains("事"))!  || (resultFromJson?.contains("u4f60"))!{
-              detailScrollView.removeFromSuperview()
+
                 self.okAction()
             }
             
             if (resultFromJson?.contains("否"))! || (resultFromJson?.contains("不"))! || (resultFromJson?.contains("不是"))!{
+              
                 self.cancelAction()
             }
             

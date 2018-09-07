@@ -61,7 +61,6 @@ class VCTest: UIViewController {
         warningLabel.textColor = UIColor.black
         warningLabel.text = "室內外空气质量一致"
         
-        
         pmBgPink.layer.cornerRadius = 80.0
         let bounds = bgWhitePink.bounds
         let maskPath = UIBezierPath.init(roundedRect: bounds, byRoundingCorners: [.topRight, .bottomRight ] , cornerRadii: CGSize(width: 165, height: 165))

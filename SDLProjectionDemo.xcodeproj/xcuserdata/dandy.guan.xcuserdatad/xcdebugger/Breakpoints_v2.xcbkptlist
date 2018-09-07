@@ -10,29 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SDLProjectionDemo/ProjectionVHAController.swift"
-            timestampString = "557922837.874933"
+            timestampString = "557981264.514009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "421"
-            endingLineNumber = "421"
-            landmarkName = "yesAction()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SDLProjectionDemo/ProjectionVHAController.swift"
-            timestampString = "557922837.875683"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "664"
-            endingLineNumber = "664"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "onResults(_:isLast:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SDLProjectionDemo.ProjectionVHAController.onResults(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Any&gt;&gt;, isLast: Swift.Bool) -&gt; ()"
+                  moduleName = "SDLProjectionDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dandy.guan/ESG_Ford_Projection_Swift/SDLProjectionDemo/ProjectionVHAController.swift"
+                  timestampString = "557980878.5972739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "5188">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SDLProjectionDemo.ProjectionVHAController.onResults(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Any&gt;&gt;, isLast: Swift.Bool) -&gt; ()"
+                  moduleName = "SDLProjectionDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dandy.guan/ESG_Ford_Projection_Swift/SDLProjectionDemo/ProjectionVHAController.swift"
+                  timestampString = "557980878.6035939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "10236">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
