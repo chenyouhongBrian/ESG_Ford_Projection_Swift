@@ -41,6 +41,7 @@ class VCTest: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        AVAudioSession.sharedInstance().requestRecordPermission({_ in print("提早开启权限")})
         initSpeechSynth()
         
     }
