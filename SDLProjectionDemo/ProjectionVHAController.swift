@@ -641,14 +641,27 @@ class ProjectionVHAController: UIViewController,IFlySpeechSynthesizerDelegate,IF
         print("IFlySpeechRecognizer__onCancel")
     }
    
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.frame.size.height = ScreenHeight
+        self.view.frame.size.width = ScreenWidth
+    }
     
     
 }
 
 
 
-
+extension UIView {
+     var width: CGFloat {
+        get {
+            return frame.size.width
+        }
+        set(newValue) {
+            print("=========== newValue \(newValue)")
+        }
+    }
+}
 
 
 
